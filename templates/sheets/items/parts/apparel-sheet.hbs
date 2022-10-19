@@ -1,0 +1,56 @@
+    <tr>
+        <th>
+            {{localize "gender"}}
+        </th>
+        <td>
+            <a class="property-choices-edit edit" data-parameters='gender;system.gender;choices.items.genders;1'
+                title='{{localize "edit"}}'>
+                {{ localize system.gender }} <i class="fas fa-edit"></i>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "part"}}
+        </th>
+        <td>
+            {{#each system.part as |item| }}
+            {{ localize item }}
+            {{#if (gt ../system.part.length 1) }}
+            <br />
+            {{/if}}
+            {{/each}}
+            <a class="property-choices-edit edit" data-parameters='part;system.part;choices.items.parts;2'
+                title='{{localize "edit"}}'>
+                <i class="fas fa-edit"></i>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "vogue"}}
+        </th>
+        <td>
+            <a class="property-edit edit" data-parameters='system.vogue;{{system.vogue}};-5;5;1'
+                title='{{localize "editValue1"}}'>{{sign system.vogue}}
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "quality"}}
+        </th>
+        <td>
+            <a class="property-edit edit" data-parameters='system.quality;{{system.quality}};-5;5;1'
+                title='{{localize "editValue1"}}'>{{sign system.quality}}
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "impression"}}
+        </th>
+        <td>
+            <b>{{sign system.impression}}</b>
+        </td>
+    </tr>

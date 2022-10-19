@@ -1,0 +1,45 @@
+{
+  "id": "lex-occultum",
+  "version": "1.0.0",
+  "title": "Lex Occultum [UNOFFICIAL]",
+  "url": "https://gitlab.com/foundrynet/worldbuilding/",
+  "description": "Lex Occultum UNOFFICIAL Game System available in English and Italian.",
+  "license": "LICENSE.txt",
+  "authors": [
+    {
+      "name": "jchrist00",
+      "url": "jchrist00#6194",
+      "flags": {}
+    }
+  ],
+  "esmodules": [
+    "lex-occultum.js"
+  ],
+  "styles": [
+    "styles/lex-occultum.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "it",
+      "name": "Italian",
+      "path": "lang/it.json"
+    }
+  ],
+  "compatibility": {
+    "minimum": "10",
+    "verified": "10.282",
+    "maximum": "10.288"
+  },
+  "gridDistance": 1,
+  "gridUnits": "m",
+  "initiative": "1d10",
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "sanity",
+  "manifest": "https://raw.githubusercontent.com/foundryvtt/worldbuilding/master/system.json",
+  "download": "https://github.com/foundryvtt/worldbuilding/archive/refs/tags/release-071.zip"
+}

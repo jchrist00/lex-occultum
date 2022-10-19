@@ -1,0 +1,192 @@
+<form class='actor-sheet {{cssClass}} editable' autocomplete="off">
+    {{#if userIsGM}}
+    <div style="text-align: center; font-size:22px;">
+        <a class="toggle-edit-mode">
+            {{localize "sheetEditMode"}}: {{#if system.editMode }}<i class="fas fa-unlock"
+                title='{{localize "editable"}}'></i>{{else}}<i class="fas fa-lock"
+                title='{{localize "notEditable"}}'></i>{{/if}}
+        </a>
+    </div>
+    {{/if}}
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+        <table class="registry-area">
+            <tr>
+                <td rowspan="4" style="width: 150px">
+                    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="150"
+                        width="150" />
+                </td>
+                <td colspan="4">
+                    <h1 class="charname">
+                        <input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
+                    </h1>
+                </td>
+                <td rowspan="2">
+                    <div style="white-space: nowrap;">
+                        <div class="health">
+                            <a class="property-edit edit-always"
+                                data-parameters='system.health.damage;{{system.health.damage}};-{{system.health.max}};0;1'
+                                title='{{localize "editValue1"}}'>{{system.health.value}} /
+                                {{system.health.max}}</a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <b>{{localize "penalty"}}:</b> {{system.health.penalty}}
+                    </div>
+                    <hr>
+                    <div>
+                        <b>{{localize "naturalHealing"}}:</b> {{system.health.naturalHealing.value}}
+                    </div>
+                    <div>
+                        <b>{{localize "active"}}:</b>
+                        <a class="property-edit {{#if (lt system.health.penalty 0)}}edit-always{{/if}}"
+                            data-parameters='system.health.naturalHealing.activated;{{system.health.naturalHealing.activated}};0;1;1'
+                            title='{{localize "editValue1"}}'>
+                            {{#if system.health.naturalHealing.activated}}{{localize
+                            "yes"}}{{else}}{{localize "no"}}{{/if}}
+                        </a>
+                    </div>
+                </td>
+                <td rowspan="2">
+                    <div class="health">
+                        <a class="property-edit edit-always"
+                            data-parameters='system.sanity.damage;{{system.sanity.damage}};-{{system.sanity.max}};0;1'
+                            title='{{localize "editValue1"}}'>{{system.sanity.value}} / {{system.sanity.max}}</a>
+                    </div>
+                    <hr>
+                    <div>
+                        <b>{{localize "penalty"}}:</b> {{system.sanity.penalty}}
+                    </div>
+                    <hr>
+                    <div>
+                        <b>{{localize "naturalHealing"}}:</b> {{system.sanity.naturalHealing.value}}
+                    </div>
+                    <div>
+                        <b>{{localize "active"}}:</b>
+                        <a class="property-edit {{#if (lt system.sanity.penalty 0)}}edit-always{{/if}}"
+                            data-parameters='system.sanity.naturalHealing.activated;{{system.sanity.naturalHealing.activated}};0;1;1'
+                            title='{{localize "editValue1"}}'>
+                            {{#if system.sanity.naturalHealing.activated}}{{localize
+                            "yes"}}{{else}}{{localize "no"}}{{/if}}
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{#if (and userIsGM system.editMode)}}
+                    <a class="property-edit edit"
+                        data-parameters='system.registry.money.ducats;{{system.registry.money.ducats}};0;999999999;1'
+                        title='{{localize "editValue1"}}'>{{system.registry.money.ducats}}</a>,<a
+                        class="property-edit edit"
+                        data-parameters='system.registry.money.marks;{{system.registry.money.marks}};-1;100;1'
+                        title='{{localize "editValue1"}}'>{{marks system.registry.money.marks}}</a>
+                    {{else}}
+                    {{system.registry.money.ducats}},{{marks system.registry.money.marks}}
+                    {{/if}}
+                </td>
+                <td>
+                    {{system.registry.persistenceInTheWild}} {{localize "days"}}
+                </td>
+                <td>
+                    {{#if userIsGM}}
+                    <a class="property-edit edit" data-parameters='system.registry.fate;{{system.registry.fate}};0;4;1'
+                        title='{{localize "editValue1"}}'>{{system.registry.fate}}</a>
+                    {{else}}
+                    {{system.registry.fate}}
+                    {{/if}}
+                </td>
+                <td>
+                    {{system.registry.adventurePointsUsed}} / {{system.registry.adventurePointsAvailable}}
+                    {{#if userIsGM}}
+                    <a class="property-choices-edit edit"
+                        data-parameters='adventurePointsAvailable;system.registry.adventurePointsAvailable;choices.creationPointsAndExperience;1'
+                        title='{{localize "edit"}}'>
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    {{/if}}
+                    <br>
+                    {{system.registry.skillKeyAdventurePointsUsed}} /
+                    {{system.registry.skillKeyAdventurePointsAvailable}}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    {{localize "money"}}
+                </th>
+                <th>
+                    {{localize "persistenceInTheWild"}}
+                </th>
+                <th>
+                    {{localize "fate"}}
+                </th>
+                <th>
+                    {{localize "adventurePoints"}}
+                </th>
+                <th>
+                    {{localize "health"}} <i class="fas fa-square-info description-pop-up"
+                        data-item-description='{{{system.health.description}}}'></i>
+                </th>
+                <th>
+                    {{localize "sanity"}} <i class="fas fa-square-info description-pop-up"
+                        data-item-description='{{{system.sanity.description}}}'></i>
+                </th>
+            </tr>
+        </table>
+    </header>
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="tab-label" data-tab="stats">
+            {{localize "stats"}}
+        </a>
+        <a class="tab-label" data-tab="fighting">
+            {{localize "fighting"}}
+        </a>
+        <a class="tab-label" data-tab="skills">
+            {{localize "skills"}}
+        </a>
+        <a class="tab-label" data-tab="inventory">
+            {{localize "inventory"}}
+        </a>
+        <a class="tab-label" data-tab="notes">
+            {{localize "notes"}}
+        </a>
+        {{!-- {{#if userIsGM}}
+        <a class="tab-label" data-tab="items">
+            {{localize "items"}}
+        </a>
+        {{/if}} --}}
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        {{!-- stats tab --}}
+        <div class="tab" data-group="primary" data-tab="stats">
+            {{> systems/lex-occultum/templates/sheets/actors/characters/tabs/stats-tab.hbs }}
+        </div>
+        {{!-- combat tab --}}
+        <div class="tab" data-group="primary" data-tab="fighting">
+            {{> systems/lex-occultum/templates/sheets/actors/characters/tabs/combat-tab.hbs }}
+        </div>
+        {{!-- skills tab --}}
+        <div class="tab skills" data-group="primary" data-tab="skills">
+            {{> systems/lex-occultum/templates/sheets/actors/characters/tabs/skills-tab.hbs }}
+        </div>
+        {{!-- inventory tab --}}
+        <div class="tab" data-group="primary" data-tab="inventory">
+            {{> systems/lex-occultum/templates/sheets/actors/characters/tabs/inventory-tab.hbs weapons =
+            system.weapons equipments = system.equipments apparels=system.apparels kits=system.kits }}
+        </div>
+        {{!-- notes tab --}}
+        <div class="tab" data-group="primary" data-tab="notes">
+            {{editor notesHTML target="system.notes" button=true editable=editable engine="prosemirror"
+            collaborate=false}}
+        </div>
+        {{!-- items tab --}}
+        {{!-- <div class="tab items" data-group="primary" data-tab="items">
+            {{> systems/lex-occultum/templates/sheets/actors/characters/tabs/items-tab.hbs}}
+        </div> --}}
+    </section>
+</form>

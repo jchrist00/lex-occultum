@@ -1,0 +1,128 @@
+    <tr>
+        <th>
+            {{localize "quality"}}
+        </th>
+        <td>
+            {{localize system.quality}}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "group"}}
+        </th>
+        <td>
+            <a class="property-choices-edit edit" data-parameters='weaponsGroups;system.group;choices.weapons.groups;1'
+                title='{{localize "edit"}}'>
+                {{ localize system.group }} <i class="fas fa-edit"></i>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "hands"}}
+        </th>
+        <td>
+            <a class="property-edit edit" data-parameters='system.hands;{{system.hands}};1;2;1'
+                title='{{localize "editValue1"}}'>{{system.hands}}</a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "weaponsActions"}}
+        </th>
+        <td>
+            <a class="property-edit edit" data-parameters='system.weaponsActions;{{system.weaponsActions}};0;4;1'
+                title='{{localize "editValue1"}}'>{{system.weaponsActions}}</a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "projectilesPerTurn"}}
+        </th>
+        <td>
+            <input name="system.projectilesPerTurn" type="text" value='{{system.projectilesPerTurn}}'
+                placeholder="{{localize " projectilesPerTurn"}}" />
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "initiativeModifier"}}
+        </th>
+        <td>
+            <a class="property-edit edit"
+                data-parameters='system.initiativeModifier;{{system.initiativeModifier}};-100;100;1'
+                title='{{localize "editValue1"}}'>{{sign system.initiativeModifier}}</a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "damage"}}
+        </th>
+        <td>
+            <input name="system.damage" type="text" value='{{system.damage}}' placeholder="{{localize " E.G.
+                1d10"}}" />
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "openRollValue"}}
+        </th>
+        <td>
+            <a class="property-edit edit" data-parameters='system.openRollValue;{{system.openRollValue}};0;20;1'
+                title='{{localize "editValue1"}}'>{{system.openRollValue}}</a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "misfire"}}
+        </th>
+        <td>
+            <a class="property-edit edit" data-parameters='system.misfire;{{system.misfire}};0;20;1'
+                title='{{localize "editValue1"}}'>{{system.misfire}}
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "objectModifier"}}
+        </th>
+        <td>
+            <a class="property-edit edit" data-parameters='system.objectModifier;{{system.objectModifier}};-2;2;1'
+                title='{{localize "editValue1"}}'>{{sign system.objectModifier}}
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "breakingPoint"}}
+        </th>
+        <td>
+            <a class="property-edit edit" data-parameters='system.breakingPoint;{{system.breakingPoint}};0;20;1'
+                title='{{localize "editValue1"}}'>{{system.breakingPoint}}
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "shortRange"}}
+        </th>
+        <td>
+            <a class="property-edit edit" data-parameters='system.minimumRange;{{system.minimumRange}};0;20;1'
+                title='{{localize "editValue1"}}'>{{system.minimumRange}}
+            </a>
+            < <a class="property-edit edit" data-parameters='system.shortRange;{{system.shortRange}};0;20;1'
+                title='{{localize "editValue1"}}'>{{system.shortRange}}</a>
+                </a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "longRange"}} ({{localize "damage"}}/2)
+        </th>
+        <td>
+            {{item.system.shortRange}} < <a class="property-edit edit"
+                data-parameters='system.longRange;{{system.longRange}};0;20;1' title='{{localize "editValue1"}}'>
+                {{system.longRange}}</a>
+                </a>
+        </td>
+    </tr>

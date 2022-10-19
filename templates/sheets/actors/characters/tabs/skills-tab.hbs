@@ -1,0 +1,106 @@
+<table class="skills-area">
+    {{#each system.skillsTabs as |skills| }}
+    <tr>
+        {{#each skills as |item key|}}
+        <td>
+            <table class="skill-area">
+                <tr class="skill-row">
+                    <th class="ability-label skill-label">
+                        {{localize item.label}}
+                        {{!-- <i class="fas fa-comment-dots description-pop-up"
+                            data-item-description='{{{localize item.description}}}'></i> --}}
+                    </th>
+                    {{#if ../../system.editMode}}
+                    <td class="value">
+                        <b><a class="property-edit edit"
+                                data-parameters='system.skills.{{key}}.value;{{item.value}};{{item.minValue}};10;1'
+                                title='{{localize "editValue1"}}'>{{item.value}}
+                            </a></b><span title='{{localize "nextRankCost"}}'>{{item.nextValue}}</span>
+                    </td>
+                    {{/if}}
+                    <td class="ability-value" {{#if ../../system.editMode}}colspan="2" {{/if}}>
+                        <a class="skill-task button-circle" data-skill-key='{{key}}' title='{{localize "roll"}}!'>
+                            {{item.value}}
+                        </a>
+                    </td>
+                </tr>
+                {{#each item.disciplines as |item1 key1|}}
+                <tr class="discipline-row">
+                    <th class="ability-label discipline-label">
+                        {{localize item1.label}}
+                        {{!-- <i class="fas fa-comment-dots description-pop-up"
+                            data-item-description='{{{localize item1.description}}}'></i> --}}
+                    </th>
+                    {{#if ../../../system.editMode}}
+                    <td class="value">
+                        <b>
+                            <a class="property-edit edit"
+                                data-parameters='system.skills.{{key}}.disciplines.{{key1}}.value;{{item1.value}};{{item1.minValue}};{{item1.maxValue}};1'
+                                title='{{localize "editValue1"}}'>{{item1.value}}
+                            </a>{{item1.nextValue}}
+                        </b>
+                    </td>
+                    {{/if}}
+                    <td class="ability-value">
+                        {{#if ../../../system.editMode}}
+                        <a class="skill-task button-circle" data-skill-key='{{key}}' data-discipline-key='{{key1}}'
+                            title='{{localize "roll"}}!'>
+                            {{item1.abilityValue}}
+                        </a>
+                        {{else}}
+                        <a class="skill-task button-circle" data-skill-key='{{key}}' data-discipline-key='{{key1}}'
+                            title='{{localize "roll"}}!'>
+                            {{item1.abilityValue}}
+                        </a>
+                        {{/if}}
+                    </td>
+                </tr>
+                {{#each item1.specialities as |item2 key2|}}
+                <tr class="speciality-row">
+                    <th class="ability-label speciality-label">
+                        {{localize item2.label}}
+                        {{!-- <i class="fas fa-comment-dots description-pop-up"
+                            data-item-description='{{{localize item2.description}}}'></i> --}}
+                        <div style="font-weight: normal;">
+                            {{#if (and item2.hasChoice (gt item2.value 0 ))}}
+                            {{#if ../../../../system.editMode}}
+                            <input name="system.skills.{{key}}.disciplines.{{key1}}.specialities.{{key2}}.choice"
+                                type="text" value="{{item2.choice}}" placeholder='{{localize "choice" }}...' />
+                            {{else}}
+                            {{item2.choice}}
+                            {{/if}}
+                            {{/if}}
+                        </div>
+                    </th>
+                    {{#if ../../../../system.editMode}}
+                    <td class="value">
+                        <b>
+                            <a class="property-edit edit"
+                                data-parameters='system.skills.{{key}}.disciplines.{{key1}}.specialities.{{key2}}.value;{{item2.value}};0;{{item2.maxValue}};1'
+                                title='{{localize "editValue1"}}'>{{item2.value}}
+                            </a>{{item2.nextValue}}
+                        </b>
+                    </td>
+                    {{/if}}
+                    <td class="ability-value">
+                        {{#if ../../../../system.editMode}}
+                        <a class="skill-task button-circle" data-skill-key='{{key}}' data-discipline-key='{{key1}}'
+                            data-specialty-key='{{key2}}' title='{{localize "roll"}}!'>
+                            {{item2.abilityValue}}
+                        </a>
+                        {{else}}
+                        <a class="skill-task button-circle" data-skill-key='{{key}}' data-discipline-key='{{key1}}'
+                            data-specialty-key='{{key2}}' title='{{localize "roll"}}!'>
+                            {{item2.abilityValue}}
+                        </a>
+                        {{/if}}
+                    </td>
+                </tr>
+                {{/each}}
+                {{/each}}
+            </table>
+        </td>
+        {{/each}}
+    </tr>
+    {{/each}}
+</table>

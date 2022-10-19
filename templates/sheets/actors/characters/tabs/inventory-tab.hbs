@@ -1,0 +1,230 @@
+<table class="inventory-area">
+    <tr>
+        <th class="title" colspan="6">
+            {{localize "weapons"}}
+        </th>
+    </tr>
+    <tr class="sub-headers">
+        <th colspan="2">
+            {{localize "name"}}
+        </th>
+        <th>
+            {{localize "quality"}}
+        </th>
+        <th>
+            {{localize "weight"}}
+        </th>
+        <th>
+            {{localize "price"}}
+        </th>
+        <th class="actions">
+        </th>
+    </tr>
+    {{#each weapons as |item|}}
+    <tr>
+        <td class="image">
+            <img src="{{item.img}}" title="{{item.name}}" height="25" width="25" />
+        </td>
+        <td class="label">
+            {{localize item.system.label}}
+        </td>
+        <td>
+            {{localize item.system.quality}}
+        </td>
+        <td>
+            {{weight item.system.weight}}
+        </td>
+        <td>
+            {{item.system.price2.ducats}}.{{marks item.system.price2.marks}}
+        </td>
+        <td class="actions">
+            <a class="item-control item-edit" title='{{localize "edit"}}'><i class="fas fa-edit"
+                    data-item-id='{{item.id}}'></i></a>
+            <a class="item-control item-delete" title='{{localize "delete"}}'><i class="fas fa-trash"
+                    data-item-id='{{item.id}}'></i></a>
+            <a class="item-control item-refund" title='{{localize "refund"}}'><i class="fas fa-undo"
+                    data-item-id='{{item.id}}'></i></a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+<table class="inventory-area">
+    <tr>
+        <th class="title" colspan="6">
+            {{localize "equipment"}}
+        </th>
+    </tr>
+    <tr class="sub-headers">
+        <th colspan="2">
+            {{localize "name"}}
+        </th>
+        <th>
+            {{localize "group"}}
+        </th>
+        <th>
+            {{localize "weight"}}
+        </th>
+        <th>
+            {{localize "price"}}
+        </th>
+        <th class="actions">
+        </th>
+    </tr>
+    {{#each equipments as |item|}}
+    <tr>
+        <td class="image">
+            <img src="{{item.img}}" title="{{item.name}}" height="25" width="25" />
+        </td>
+        <td class="label">
+            {{localize item.system.label}}
+        </td>
+        <td>
+            {{localize item.system.group}}
+        </td>
+        <td>
+            {{weight item.system.weight}}
+        </td>
+        <td>
+            {{item.system.price2.ducats}}.{{marks item.system.price2.marks}}
+        </td>
+        <td class="actions">
+            <a class="item-control item-edit" title='{{localize "edit"}}'><i class="fas fa-edit"
+                    data-item-id='{{item.id}}'></i></a>
+            <a class="item-control item-delete" title='{{localize "delete"}}'><i class="fas fa-trash"
+                    data-item-id='{{item.id}}'></i></a>
+            <a class="item-control item-refund" title='{{localize "refund"}}'><i class="fas fa-undo"
+                    data-item-id='{{item.id}}'></i></a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+<table class="inventory-area">
+    <tr>
+        <th class="title" colspan="6">
+            {{localize "kits"}}
+        </th>
+    </tr>
+    <tr class="sub-headers">
+        <th colspan="2">
+            {{localize "name"}}
+        </th>
+        <th>
+            {{localize "size"}}
+        </th>
+        <th>
+            {{localize "weight"}}
+        </th>
+        <th>
+            {{localize "price"}}
+        </th>
+        <th class="actions">
+        </th>
+    </tr>
+    {{#each kits as |item|}}
+    <tr>
+        <td class="image">
+            <img src="{{item.img}}" title="{{item.name}}" height="25" width="25" />
+        </td>
+        <td class="label">
+            {{localize item.system.label}}
+        </td>
+        <td>
+            {{localize item.system.size}}
+        </td>
+        <td>
+            {{weight item.system.weight}}
+        </td>
+        <td>
+            {{item.system.price2.ducats}}.{{marks item.system.price2.marks}}
+        </td>
+        <td class="actions">
+            <a class="item-control item-edit" title='{{localize "edit"}}'><i class="fas fa-edit"
+                    data-item-id='{{item.id}}'></i></a>
+            <a class="item-control item-delete" title='{{localize "delete"}}'><i class="fas fa-trash"
+                    data-item-id='{{item.id}}'></i></a>
+            <a class="item-control item-refund" title='{{localize "refund"}}'><i class="fas fa-undo"
+                    data-item-id='{{item.id}}'></i></a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+<table class="inventory-area">
+    <tr>
+        <th class="title" colspan="10">
+            {{localize "apparel"}}
+        </th>
+    </tr>
+    <tr class="sub-headers">
+        <th colspan="2">
+            {{localize "name"}}
+        </th>
+        <th>
+            {{localize "status"}}
+        </th>
+        <th>
+            {{localize "part"}}
+        </th>
+        <th>
+            {{localize "quality"}}
+        </th>
+        <th>
+            {{localize "vogue"}}
+        </th>
+        <th>
+            {{localize "impression"}}
+        </th>
+        <th>
+            {{localize "weight"}}
+        </th>
+        <th>
+            {{localize "price"}}
+        </th>
+        <th class="actions">
+        </th>
+    </tr>
+    {{#each apparels as |item|}}
+    <tr>
+        <td class="image">
+            <img src="{{item.img}}" title="{{item.name}}" height="25" width="25" />
+        </td>
+        <td class="label">
+            {{localize item.system.label}}
+        </td>
+        <td>
+            <a class='item-control item-equip {{#if item.system.equipped}}active{{/if}}' title="Equip"><i
+                    class="fas fa-tshirt" data-item-id='{{item.id}}'></i></a>
+        </td>
+        <td>
+            {{#each item.system.part as |item2| }}
+            {{localize item2}}
+            {{#if (gt item.system.part.length 1) }}
+            <br />
+            {{/if}}
+            {{/each}}
+        </td>
+        <td>
+            {{sign item.system.quality}}
+        </td>
+        <td>
+            {{sign item.system.vogue}}
+        </td>
+        <td>
+            {{sign item.system.impression}}
+        </td>
+        <td>
+            {{weight item.system.weight}}
+        </td>
+        <td>
+            {{item.system.price2.ducats}}.{{marks item.system.price2.marks}}
+        </td>
+        <td class="actions">
+            <a class="item-control item-edit" title='{{localize "edit"}}'><i class="fas fa-edit"
+                    data-item-id='{{item.id}}'></i></a>
+            <a class="item-control item-delete" title='{{localize "delete"}}'><i class="fas fa-trash"
+                    data-item-id='{{item.id}}'></i></a>
+            <a class="item-control item-refund" title='{{localize "refund"}}'><i class="fas fa-undo"
+                    data-item-id='{{item.id}}'></i></a>
+        </td>
+    </tr>
+    {{/each}}
+</table>

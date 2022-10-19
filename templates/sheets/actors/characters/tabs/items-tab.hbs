@@ -1,0 +1,42 @@
+<section class="item-list">
+    <table class="default-table">
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                {{localize "id"}}
+            </th>
+            <th>
+                {{localize "name"}}
+            </th>
+            <th>
+                {{localize "type"}}
+            </th>
+            <th>
+            </th>
+        </tr>
+        {{#each actor.items as |item key|}}
+        <tr>
+            <td>
+                <h4>{{key}}</h4>
+            </td>
+            <td>
+                <h4>{{item._id}}</h4>
+            </td>
+            <td>
+                <h4>{{item.name}}</h4>
+            </td>
+            <td>
+                <h4>{{localize item.type}}</h4>
+            </td>
+            <td>
+                <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"
+                        data-item-id='{{item._id}}'></i></a>
+                <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"
+                        data-item-id='{{item._id}}'></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</section>

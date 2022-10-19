@@ -1,0 +1,166 @@
+<table class="registry-area">
+    <tr>
+        <td>
+            <input type="text" name="system.registry.gender" value="{{system.registry.gender}}" />
+        </td>
+        <td>
+            <input type="number" name="system.registry.age" value="{{system.registry.age}}" placeholder="{{localize "
+                years"}}" />
+        </td>
+        <td>
+            <input type="number" name="system.registry.height" value="{{system.registry.height}}"
+                placeholder="{{localize " cm"}}" />
+        </td>
+        <td>
+            <input type="number" name="system.registry.weight" value="{{system.registry.weight}}"
+                placeholder="{{localize " kg"}}" />
+        </td>
+        <td>
+            <b>{{ localize system.registry.dominantHand}}</b>
+            <a class="property-choices-edit edit"
+                data-parameters='dominantHand;system.registry.dominantHand;choices.weapons.hands;1'
+                title='{{localize "edit"}}'>
+                <i class="fas fa-edit"></i>
+            </a>
+        </td>
+        <td>
+            {{system.registry.movement}} m
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "gender"}}
+        </th>
+        <th>
+            {{localize "age"}}
+        </th>
+        <th>
+            {{localize "height"}}
+        </th>
+        <th>
+            {{localize "weight"}}
+        </th>
+        <th>
+            {{localize "dominantHand"}}
+        </th>
+        <th>
+            {{localize "movement"}}
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" name="system.registry.nationality" value="{{system.registry.nationality}}" />
+        </td>
+        <td>
+            <input type="text" name="system.registry.nativeTongue" value="{{system.registry.nativeTongue}}" />
+        </td>
+        <td>
+            <b> {{ localize system.registry.socialClass}} </b>
+            <a class="property-choices-edit edit"
+                data-parameters='socialClasses;system.registry.socialClass;choices.socialClasses;1'
+                title='{{localize "edit"}}'>
+                <i class="fas fa-edit"></i>
+            </a>
+        </td>
+        <td>
+            <b>{{ localize system.registry.archetype}}</b>
+            {{#if (ne system.registry.archetype "")}}
+            [{{localize system.registry.skillKey}}]
+            {{/if}}
+            <a class="property-choices-edit edit"
+                data-parameters='archetype;system.registry.archetype;choices.archetypes;1' title='{{localize "edit"}}'>
+                <i class="fas fa-edit"></i>
+            </a>
+        </td>
+        <td>
+            <input type="text" name="system.registry.profession" value="{{system.registry.profession}}" />
+        </td>
+        <td>
+            <b>
+                {{system.registry.vogue.value}} (<a class="property-edit edit"
+                    data-parameters='system.registry.vogue.fashion;{{system.registry.vogue.fashion}};-5;5;1'
+                    title='{{localize "editValue1"}}'>{{sign system.registry.vogue.fashion}}</a>,<a
+                    class="property-edit edit"
+                    data-parameters='system.registry.vogue.quality;{{system.registry.vogue.quality}};-5;5;1'
+                    title='{{localize "editValue1"}}'>{{sign system.registry.vogue.quality}}</a>)
+            </b>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "nationality"}}
+        </th>
+        <th>
+            {{localize "nativeTongue"}}
+        </th>
+        <th>
+            {{localize "socialClass"}}
+        </th>
+        <th>
+            {{localize "archetype"}}
+        </th>
+        <th>
+            {{localize "profession"}}
+        </th>
+        <th>
+            {{localize "vogue"}}
+        </th>
+    </tr>
+</table>
+
+<hr>
+
+<div class="title">
+    {{localize "traits"}}
+</div>
+
+<table class="traits-area">
+    <tr>
+        {{#each system.traits as |item key|}}
+        <td>
+            <b>
+                <div class="trait-modifier">{{sign item.value}}</div>
+            </b>
+            <hr>
+            <a class="situation-task" data-trait-key='{{key}}' title='{{localize "roll"}}!'>
+                {{localize key}}
+            </a>
+            {{!-- <i class="fas fa-comment-dots description-pop-up"
+                data-item-description='{{{localize item.description}}}'></i> --}}
+            <a class="property-choices-edit edit"
+                data-parameters='{{localize traitModifier}}{{localize key}};system.traits.{{key}}.value;choices.traitsModifiers.{{key}};1'
+                title='{{localize "edit"}}'><i class="fas fa-edit"></i>
+            </a>
+        </td>
+        {{/each}}
+    </tr>
+
+</table>
+
+<hr>
+
+<div class="title">
+    {{localize "powerSpheres"}}
+</div>
+
+<table class="spheres-area">
+    <tr>
+        {{#each system.spheres as |item key|}}
+        <td>
+            <b>
+                <div class="item-description" data-item-description='{{{localize item.description}}}'>
+                    <div class="sphere-level"> {{item.level}}</div>
+                </div>
+            </b>
+            <hr>
+            <b>
+                <a class="property-edit edit" data-parameters='system.spheres.{{key}}.value;{{item.value}};0;100;1'
+                    title='{{localize "editValue1"}}'>{{item.value}}</a>
+            </b>
+            <hr>
+            {{!-- {{localize key}} <i class="fas fa-comment-dots description-pop-up"
+                data-item-description='{{{localize item.description}}}'></i> --}}
+        </td>
+        {{/each}}
+    </tr>
+</table>

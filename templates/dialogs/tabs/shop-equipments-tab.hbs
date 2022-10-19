@@ -1,0 +1,51 @@
+<table class="shop-area-equipments">
+    <tr>
+        {{#each equipments as |item|}}
+        <td class="column">
+            <table class="shop-area">
+                {{#each item as |item1 key|}}
+                <tr>
+                    <th class="title" colspan="4">
+                        {{localize key}}
+                    </th>
+                </tr>
+                <tr class="sub-headers">
+                    <th>
+                        {{localize "name"}}
+                    </th>
+                    {{!-- <th>
+                        {{localize "quality"}}
+                    </th> --}}
+                    <th>
+                        {{localize "weight"}}
+                    </th>
+                    <th>
+                        {{localize "price"}}
+                    </th>
+                    <th></th>
+                </tr>
+                {{#each item1 as |item2|}}
+                <tr>
+                    <td>
+                        {{localize item2.system.label}}
+                    </td>
+                    <td>
+                        {{weight item2.system.weight}}
+                    </td>
+                    <td>
+                        {{item2.system.price2.ducats}}.{{marks item2.system.price2.marks}}
+                    </td>
+                    <td>
+                        <a class="purchase-item" data-item-id='{{item2.id}}' data-group='{{item2.system.group}}'
+                            title='{{localize "purchase"}}'> <i class="fa fa-shopping-bag"></i>
+                        </a>
+                    </td>
+                </tr>
+                {{/each}}
+                {{/each}}
+            </table>
+        </td>
+        {{/each}}
+
+    </tr>
+</table>

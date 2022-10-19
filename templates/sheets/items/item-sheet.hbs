@@ -1,0 +1,46 @@
+<form class='{{cssClass}}' editMode='true' autocomplete="off">
+    <header class="sheet-header">
+        <img src='{{item.img}}' data-edit="img" title='{{item.name}}' height="64" width="64" />
+        <h1><input name="name" type="text" value='{{item.name}}' placeholder="{{localize " name"}}" /></h1>
+    </header>
+    {{!-- <diV>
+        <div>{{localize "name"}}: <b>{{item.name}}</b></div>
+    </diV> --}}
+    <hr>
+    <div>
+        <table class="item-area">
+            <tr>
+                <th>
+                    {{localize "label"}}
+                </th>
+                <td>
+                    <input name="system.label" type="text" value='{{system.label}}' placeholder="{{localize "
+                        label"}}" />
+                </td>
+            </tr>
+            {{> (pathcompose "systems/lex-occultum/templates/sheets/items/parts/@itemType-sheet.hbs" item.type ) }}
+            <tr>
+                <th>
+                    {{localize "weight"}} ({{localize "kg"}})
+                </th>
+                <td>
+                    <a class="property-edit edit" data-parameters='system.weight;{{system.weight}};0;9999999;1'
+                        title='{{localize "editValue1"}}'>{{weight system.weight}}
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    {{localize "price"}} ({{localize "ducats"}} & {{localize "marks"}})
+                </th>
+                <td>
+                    <a class="property-edit edit" data-parameters='system.price2.ducats;{{system.price2.ducats}};0;999999999;1'
+                        title='{{localize "editValue1"}}'>{{system.price2.ducats}}</a>.<a class="property-edit edit"
+                        data-parameters='system.price2.marks;{{system.price2.marks}};0;99;1'
+                        title='{{localize "editValue1"}}'>{{marks system.price2.marks}}
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>

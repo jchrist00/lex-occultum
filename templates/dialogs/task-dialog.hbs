@@ -1,0 +1,191 @@
+<table class="task-area">
+    <tr>
+        <th colspan="3">
+            {{label}}
+        </th>
+    </tr>
+
+    <tr>
+        <td class="task-total" colspan="3">
+            <div class="total">
+                {{total}}
+            </div>
+        </td>
+    </tr>
+
+    {{#if (gt taskModifiers.actorAttributes.length 0) }}
+    <tr>
+        <td colspan="3">
+            <div class="middle-lined"><i>{{localize "characterAttributes"}}</i></div>
+        </td>
+    </tr>
+    {{#each taskModifiers.actorAttributes as |attribute|}}
+    <tr>
+        <td class="task-field-bold">{{localize attribute.label}}</td>
+        <td {{#if (ne attribute.type "checkable" )}} colspan="2" {{/if}}>
+            {{#if (eq attribute.type "editable" )}}
+            <a class="modifier-edit" name='{{attribute.label}}' data-modifiers-group="actorAttributes"
+                data-pace-value={{attribute.paceValue}} data-min-value={{attribute.minValue}}
+                data-max-value={{attribute.maxValue}}>
+                {{sign attribute.value}}
+            </a>
+            {{/if}}
+            {{#if (eq attribute.type "checkable" )}}
+            {{sign attribute.value}}
+            {{/if}}
+        </td>
+    </tr>
+    {{/each}}
+    {{/if}}
+
+    {{#if (gt taskModifiers.actorModifiers.length 0)}}
+    <tr>
+        <td colspan="3">
+            <div class="middle-lined"><i>{{localize actorType}} {{localize "modifiers"}}</i></div>
+        </td>
+    </tr>
+    {{#each taskModifiers.actorModifiers as |modifier|}}
+    <tr>
+        <td class="task-field-bold">{{localize modifier.label}}
+            {{#if (ne modifier.text "") }}
+            <div class="modifier-text">{{localize modifier.text}}</div>
+            {{/if}}
+        </td>
+        <td>{{sign modifier.value}}</td>
+        <td>
+            <input class="modifier-activation" type="checkbox" data-modifiers-group="actorModifiers"
+                data-modifier-label='{{modifier.label}}' {{#if modifier.activated}} checked{{/if}} />
+        </td>
+    </tr>
+    {{/each}}
+    {{/if}}
+
+    {{#if (gt taskModifiers.itemModifiers.length 0)}}
+    <tr>
+        <td colspan="3">
+            <div class="middle-lined"><i>{{localize "items"}} {{localize "modifiers"}}</i></div>
+        </td>
+    </tr>
+    {{#each taskModifiers.itemModifiers as |modifier|}}
+    <tr>
+        <td class="task-field-bold">
+            {{localize modifier.label}}
+            {{#if (ne modifier.text "") }}
+            <div class="modifier-text">{{localize modifier.text}}</div>
+            {{/if}}
+        </td>
+        <td>{{sign modifier.value}}
+        </td>
+        <td>
+            <input class="modifier-activation" type="checkbox" data-modifiers-group="itemModifiers"
+                data-modifier-label='{{modifier.label}}' {{#if modifier.activated}} checked{{/if}} />
+        </td>
+    </tr>
+    {{/each}}
+    {{/if}}
+
+    {{#if (gt taskModifiers.rulesChoices.length 0)}}
+    <tr>
+        <td colspan="3">
+            <div class="middle-lined"><i>{{localize "rulesChoices"}}</i></div>
+        </td>
+    </tr>
+    {{#each taskModifiers.rulesChoices as |taskChoice|}}
+    <tr>
+        <td class="task-field-bold">{{localize taskChoice.label}}
+            {{#if (ne taskChoice.text "") }}
+            <div class="modifier-text">{{localize taskChoice.text}}</div>
+            {{/if}}
+        </td>
+        {{#if (ne taskChoice.type "boolean") }}
+        <td {{#if (ne taskChoice.type "checkable" )}} colspan="2" {{/if}}>
+            {{#if (eq taskChoice.type "editable" )}}
+            <a class="modifier-edit" name='{{taskChoice.label}}' data-modifiers-group="rulesChoices"
+                data-pace-value={{taskChoice.paceValue}} data-min-value={{taskChoice.minValue}}
+                data-max-value={{taskChoice.maxValue}}>
+                {{taskChoice.value}}
+            </a>
+            {{/if}}
+            {{#if (or (eq taskChoice.type "selectable" ) (eq taskChoice.type "choiceable" ))}}
+            <select class="modifier-selected" name='{{taskChoice.label}}' data-modifiers-group="rulesChoices">
+                {{#select taskChoice.value}}
+                {{#each taskChoice.list as |item|}}
+                <option data-label='{{item.label}}' value='{{item.value}}'>{{#if (isNumber item.value) }}[{{sign
+                    item.value}}]
+                    {{/if}}{{localize item.label}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+            {{/if}}
+            {{#if (eq taskChoice.type "checkable" )}}
+            {{sign taskChoice.value}}
+            {{/if}}
+        </td>
+        {{/if}}
+        {{#if (or (eq taskChoice.type "checkable") (eq taskChoice.type "boolean") )}}
+        <td {{#if (eq taskChoice.type "boolean" )}} colspan="2" {{/if}}>
+            <input class="modifier-activation" type="checkbox" data-modifiers-group="rulesChoices"
+                data-modifier-label='{{taskChoice.label}}' {{#if taskChoice.activated}} checked{{/if}} />
+        </td>
+        {{/if}}
+    </tr>
+    {{/each}}
+    {{/if}}
+
+    {{#if (gt taskModifiers.rulesModifiers.length 0)}}
+    <tr>
+        <td colspan="3">
+            <div class="middle-lined"><i>{{localize "rulesModifiers"}}</i></div>
+        </td>
+    </tr>
+    {{#each taskModifiers.rulesModifiers as |taskOption|}}
+    <tr>
+        <td class="task-field-bold">{{localize taskOption.label}}
+            {{#if (ne taskOption.text "") }}
+            <div class="modifier-text">{{localize taskOption.text}}</div>
+            {{/if}}
+
+        </td>
+        <td {{#if (ne taskOption.type "checkable" )}} colspan="2" {{/if}}>
+            {{#if (eq taskOption.type "editable" )}}
+            <a class="modifier-edit {{taskOption.css}}" data-modifiers-group="rulesModifiers"
+                name='{{taskOption.label}}' data-pace-value='{{taskOption.paceValue}}'
+                data-min-value='{{taskOption.minValue}}' data-max-value='{{taskOption.maxValue}}' style="width: 64px;">
+                {{sign taskOption.value}}
+            </a>
+            {{/if}}
+            {{#if (eq taskOption.type "selectable" )}}
+            <select class="modifier-selected" name='{{taskOption.label}}' data-modifiers-group="rulesModifiers">
+                {{#select taskOption.value}}
+                {{#each taskOption.list as |item|}}
+                <option data-label='{{item.label}}' value='{{item.value}}' {{#if (eq taskOption.value value)
+                    }}selected{{/if}}>
+                    {{#if (isNumber item.value) }}[{{sign item.value}}] {{/if}}
+                    {{localize item.label}}
+                </option>
+                {{/each}}
+                {{/select}}
+            </select>
+            {{/if}}
+            {{#if (eq taskOption.type "checkable" )}}
+            {{sign taskOption.value}}
+            {{/if}}
+        </td>
+        {{#if (eq taskOption.type "checkable" )}}
+        <td>
+            <input class="modifier-activation" type="checkbox" data-modifiers-group="rulesModifiers"
+                data-modifier-label='{{taskOption.label}}' {{#if taskOption.activated}} checked{{/if}} />
+        </td>
+        {{/if}}
+    </tr>
+    {{/each}}
+    {{/if}}
+    <tr>
+        <td class="buttons" colspan="3">
+            <hr>
+            <button type="button" class="button-dice-roll roll">
+                <b>{{localize "roll"}}!</b>
+            </button>
+        </td>
+    </tr>
+</table>

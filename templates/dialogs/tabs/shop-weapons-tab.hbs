@@ -1,0 +1,102 @@
+<table class="shop-area">
+    <tr class="sub-headers">
+        <th>
+            {{localize "name"}}
+        </th>
+        <th>
+            {{localize "quality"}}
+        </th>
+        <th>
+            {{localize "hands"}}
+        </th>
+        <th>
+            {{localize "initiativeModifier"}}
+        </th>
+        {{#if (eq weaponsGroup "fireArms") }}
+        <th>
+            {{localize "misfire"}}
+        </th>
+        {{/if}}
+        <th>
+            {{localize "objectModifier"}}
+        </th>
+        <th>
+            {{localize "damage"}}
+        </th>
+        <th>
+            {{#if (or (eq weaponsGroup "lightMeleeWeapons") (eq weaponsGroup "heavyMeleeWeapons")) }}
+            {{localize "weaponsActions"}}
+            {{else}}
+            {{localize "projectilesPerTurn"}}
+            {{/if}}
+        </th>
+        {{#if (or (eq weaponsGroup "fireArms") (eq weaponsGroup "rangedWeapons")) }}
+        <th>
+            {{localize "shortRange"}}
+        </th>
+        <th>
+            {{localize "longRange"}}
+        </th>
+        {{/if}}
+        <th>
+            {{localize "weight"}}
+        </th>
+        <th>
+            {{localize "price"}}
+        </th>
+        <th></th>
+    </tr>
+    {{#each weapons as |item|}}
+    <tr>
+        <th class="name">
+            {{localize item.system.label}}
+        </th>
+        <td>
+            {{localize item.system.quality}}
+        </td>
+        <td>
+            {{item.system.hands}}
+        </td>
+        <td>
+            {{sign item.system.initiativeModifier }}
+        </td>
+        {{#if (eq ../weaponsGroup "fireArms") }}
+        <td>
+            {{item.system.misfire}}
+        </td>
+        {{/if}}
+        <td>
+            {{sign item.system.objectModifier}}
+        </td>
+        <td>
+            {{localize item.system.damage}} {{#if (gt item.system.openRollValue 0)}}({{localize
+            "OR"}} {{item.system.openRollValue}}) {{/if}}
+        </td>
+        <td>
+            {{#if (or (eq ../weaponsGroup "lightMeleeWeapons") (eq ../weaponsGroup "heavyMeleeWeapons")) }}
+            {{item.system.weaponsActions}}
+            {{else}}
+            {{item.system.projectilesPerTurn}}
+            {{/if}}
+        </td>
+        {{#if (or (eq ../weaponsGroup "fireArms") (eq ../weaponsGroup "rangedWeapons")) }}
+        <td>
+            <div>{{item.system.minimumRange}} < {{item.system.shortRange}} </div>
+        </td>
+        <td>
+            {{item.system.shortRange}} < {{item.system.longRange }} </td>
+                {{/if}}
+        <td>
+            {{weight item.system.weight}}
+        </td>
+        <td>
+            {{item.system.price2.ducats}}.{{marks item.system.price2.marks}}
+        </td>
+        <td>
+            <a class="purchase-item" data-item-id='{{item.id}}' data-group='{{item.system.group}}'
+                title='{{localize "purchase"}}'> <i class="fa fa-shopping-bag"></i>
+            </a>
+        </td>
+    </tr>
+    {{/each}}
+</table>

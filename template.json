@@ -1,0 +1,2725 @@
+{
+    "Actor": {
+        "types": [
+            "Character",
+            "Non-Character"
+        ],
+        "Character": {
+            "editMode": true,
+            "biography": "",
+            "notes": "",
+            "health": {
+                "value": 32,
+                "label": "health",
+                "damage": 0,
+                "min": 0,
+                "max": 32,
+                "penalty": 0,
+                "traits": [
+                    "constitution",
+                    "health"
+                ],
+                "naturalHealing": {
+                    "value": 0,
+                    "activated": false
+                }
+            },
+            "sanity": {
+                "value": 32,
+                "label": "sanity",
+                "damage": 0,
+                "min": 0,
+                "max": 32,
+                "penalty": 0,
+                "traits": [
+                    "intelligence",
+                    "psyche"
+                ],
+                "naturalHealing": {
+                    "value": 0,
+                    "activated": false
+                }
+            },
+            "registry": {
+                "name": "",
+                "socialClass": "",
+                "nationality": "",
+                "archetype": "",
+                "skillKey": "",
+                "language": "",
+                "adventurePointsAvailable": 0,
+                "adventurePointsUsed": 0,
+                "gender": "",
+                "age": "",
+                "height": "",
+                "fate": 1,
+                "weight": "",
+                "dominantHand": "right",
+                "persistenceInTheWild": 10,
+                "movement": 10,
+                "vogue": {
+                    "value": 0,
+                    "fashion": 0,
+                    "quality": 0
+                },
+                "money": {
+                    "ducats": 0,
+                    "marks": 0
+                }
+            },
+            "spheres": {
+                "adminstrative": {
+                    "value": 0,
+                    "label": "adminstrative"
+                },
+                "trading": {
+                    "value": 0,
+                    "label": "trading"
+                },
+                "scientific": {
+                    "value": 0,
+                    "label": "scientific"
+                },
+                "occult": {
+                    "value": 0,
+                    "label": "occult"
+                },
+                "military": {
+                    "value": 0,
+                    "label": "military"
+                },
+                "lawless": {
+                    "value": 0,
+                    "label": "lawless"
+                },
+                "holy": {
+                    "value": 0,
+                    "label": "holy"
+                },
+                "entertainment": {
+                    "value": 0,
+                    "label": "art"
+                }
+            },
+            "traits": {
+                "charisma": {
+                    "value": 0,
+                    "label": "charisma",
+                    "modifier": []
+                },
+                "constitution": {
+                    "value": 0,
+                    "label": "constitution",
+                    "modifier": []
+                },
+                "dexterity": {
+                    "value": 0,
+                    "label": "dexterity",
+                    "modifier": []
+                },
+                "intelligence": {
+                    "value": 0,
+                    "label": "intelligence",
+                    "modifier": []
+                },
+                "perception": {
+                    "value": 0,
+                    "label": "perception",
+                    "modifier": []
+                },
+                "psyche": {
+                    "value": 0,
+                    "label": "psyche",
+                    "modifier": []
+                },
+                "health": {
+                    "value": 0,
+                    "label": "health",
+                    "modifier": []
+                }
+            },
+            "skills": {
+                "agility": {
+                    "value": 1,
+                    "label": "agility",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "bodyControl": {
+                            "value": 0,
+                            "label": "bodyControl",
+                            "trait": "dexterity",
+                            "modifier": [],
+                            "specialities": {
+                                "ambidexterity": {
+                                    "value": 0,
+                                    "label": "ambidexterity",
+                                    "trait": "",
+                                    "modifier": [],
+                                    "description": ""
+                                },
+                                "evade": {
+                                    "value": 0,
+                                    "label": "evade",
+                                    "trait": "",
+                                    "modifier": [],
+                                    "description": ""
+                                },
+                                "parkour": {
+                                    "value": 0,
+                                    "label": "parkour",
+                                    "trait": "",
+                                    "modifier": [],
+                                    "description": ""
+                                }
+                            }
+                        },
+                        "horsemanship": {
+                            "value": 0,
+                            "label": "horsemanship",
+                            "trait": "dexterity",
+                            "modifier": [],
+                            "specialities": {
+                                "drivingWagon": {
+                                    "value": 0,
+                                    "label": "drivingWagon",
+                                    "trait": "",
+                                    "modifier": [],
+                                    "description": ""
+                                },
+                                "riding": {
+                                    "value": 0,
+                                    "label": "riding",
+                                    "trait": "",
+                                    "modifier": [],
+                                    "description": ""
+                                }
+                            }
+                        },
+                        "water": {
+                            "value": 0,
+                            "label": "water",
+                            "trait": "dexterity",
+                            "modifier": [],
+                            "specialities": {
+                                "swimming": {
+                                    "value": 0,
+                                    "label": "swimming",
+                                    "trait": "",
+                                    "modifier": [],
+                                    "description": ""
+                                },
+                                "diving": {
+                                    "value": 0,
+                                    "label": "diving",
+                                    "trait": "",
+                                    "modifier": [],
+                                    "description": ""
+                                }
+                            }
+                        }
+                    }
+                },
+                "communication": {
+                    "value": 1,
+                    "label": "communication",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "etiquette": {
+                            "value": 0,
+                            "label": "etiquette",
+                            "trait": "charisma",
+                            "modifier": [],
+                            "specialities": {
+                                "socialIntercourse0": {
+                                    "value": 0,
+                                    "label": "socialIntercourse",
+                                    "trait": "charisma",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "socialIntercourse2": {
+                                    "value": 0,
+                                    "label": "socialIntercourse",
+                                    "trait": "charisma",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "socialIntercourse3": {
+                                    "value": 0,
+                                    "label": "socialIntercourse",
+                                    "trait": "charisma",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "socialIntercourse4": {
+                                    "value": 0,
+                                    "label": "socialIntercourse",
+                                    "trait": "charisma",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "vogue0": {
+                                    "value": 0,
+                                    "label": "vogue",
+                                    "trait": "charisma",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "vogue2": {
+                                    "value": 0,
+                                    "label": "vogue",
+                                    "trait": "charisma",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "vogue3": {
+                                    "value": 0,
+                                    "label": "vogue",
+                                    "trait": "charisma",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "languages": {
+                            "value": 0,
+                            "label": "languages",
+                            "trait": "intelligence",
+                            "modifier": [],
+                            "specialities": {
+                                "foreignLanguage0": {
+                                    "value": 0,
+                                    "label": "foreignLanguage",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "foreignLanguage1": {
+                                    "value": 0,
+                                    "label": "foreignLanguage",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "foreignLanguage2": {
+                                    "value": 0,
+                                    "label": "foreignLanguage",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "readingAndWriting0": {
+                                    "value": 0,
+                                    "label": "readingAndWriting",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "readingAndWriting1": {
+                                    "value": 0,
+                                    "label": "readingAndWriting",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "nativeLanguage": {
+                                    "value": 0,
+                                    "label": "nativeLanguage",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "rhetoric": {
+                            "value": 0,
+                            "label": "rhetoric",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "bartering": {
+                                    "value": 0,
+                                    "label": "bartering",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "persuasion": {
+                                    "value": 0,
+                                    "label": "persuasion",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "culture": {
+                    "value": 1,
+                    "label": "culture",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "civics": {
+                            "value": 0,
+                            "label": "civics",
+                            "trait": "intelligence",
+                            "modifier": [],
+                            "specialities": {
+                                "administration": {
+                                    "value": 0,
+                                    "label": "administration",
+                                    "trait": "",
+                                    "modifier": [],
+                                    "description": ""
+                                },
+                                "bribery": {
+                                    "value": 0,
+                                    "label": "bribery",
+                                    "trait": "",
+                                    "modifier": [],
+                                    "description": ""
+                                },
+                                "economics": {
+                                    "value": 0,
+                                    "label": "economics",
+                                    "trait": "",
+                                    "modifier": [],
+                                    "description": ""
+                                },
+                                "heraldry": {
+                                    "value": 0,
+                                    "label": "heraldry",
+                                    "trait": "",
+                                    "modifier": [],
+                                    "description": ""
+                                },
+                                "law": {
+                                    "value": 0,
+                                    "label": "law",
+                                    "trait": "",
+                                    "modifier": [],
+                                    "description": ""
+                                }
+                            }
+                        },
+                        "humanities": {
+                            "value": 0,
+                            "label": "humanities",
+                            "trait": "intelligence",
+                            "modifier": [],
+                            "specialities": {
+                                "archaeology": {
+                                    "value": 0,
+                                    "label": "archaeology",
+                                    "trait": "",
+                                    "modifier": [],
+                                    "description": ""
+                                },
+                                "history": {
+                                    "value": 0,
+                                    "label": "history",
+                                    "trait": "",
+                                    "modifier": [],
+                                    "description": ""
+                                },
+                                "literatureAndArts": {
+                                    "value": 0,
+                                    "label": "literatureAndArts",
+                                    "trait": "",
+                                    "modifier": [],
+                                    "description": ""
+                                },
+                                "philosophy": {
+                                    "value": 0,
+                                    "label": "philosophy",
+                                    "trait": "",
+                                    "modifier": [],
+                                    "description": ""
+                                }
+                            }
+                        }
+                    }
+                },
+                "entertainment": {
+                    "value": 1,
+                    "label": "entertainment",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "actingAndDance": {
+                            "value": 0,
+                            "label": "actingAndDance",
+                            "trait": "charisma",
+                            "modifier": [],
+                            "specialities": {
+                                "acting": {
+                                    "value": 0,
+                                    "label": "acting",
+                                    "trait": "charisma",
+                                    "modifier": []
+                                },
+                                "choreography": {
+                                    "value": 0,
+                                    "label": "choreography",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "dancing0": {
+                                    "value": 0,
+                                    "label": "dancing",
+                                    "trait": "charisma",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "dancing1": {
+                                    "value": 0,
+                                    "label": "dancing",
+                                    "trait": "charisma",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "circusActs": {
+                            "value": 0,
+                            "label": "circusActs",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "fakirTricks0": {
+                                    "value": 0,
+                                    "label": "fakirTricks",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "juggling": {
+                                    "value": 0,
+                                    "label": "juggling",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "ropeWalking": {
+                                    "value": 0,
+                                    "label": "ropeWalking",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "gambling": {
+                            "value": 0,
+                            "label": "gambling",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "cheating": {
+                                    "value": 0,
+                                    "label": "cheating",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "games0": {
+                                    "value": 0,
+                                    "label": "games",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "games1": {
+                                    "value": 0,
+                                    "label": "games",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "illicitGaming": {
+                                    "value": 0,
+                                    "label": "illicitGaming",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "music": {
+                            "value": 0,
+                            "label": "music",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "composing": {
+                                    "value": 0,
+                                    "label": "composing",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "playingInstrument0": {
+                                    "value": 0,
+                                    "label": "playingInstrument",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "playingInstrument1": {
+                                    "value": 0,
+                                    "label": "playingInstrument",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "singing0": {
+                                    "value": 0,
+                                    "label": "singing",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "singing1": {
+                                    "value": 0,
+                                    "label": "singing",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "esotericism": {
+                    "value": 1,
+                    "label": "esotericism",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "deSodaliciorum": {
+                            "value": 0,
+                            "label": "deSodaliciorum",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "esotericSymbolism": {
+                                    "value": 0,
+                                    "label": "esotericSymbolism",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "occultLiterature": {
+                                    "value": 0,
+                                    "label": "occultLiterature",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "subRosaDoctus0": {
+                                    "value": 0,
+                                    "label": "subRosaDoctus",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "subRosaDoctus1": {
+                                    "value": 0,
+                                    "label": "subRosaDoctus",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "subRosaDoctus2": {
+                                    "value": 0,
+                                    "label": "subRosaDoctus",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "divination": {
+                            "value": 0,
+                            "label": "divination",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "numerology": {
+                                    "value": 0,
+                                    "label": "numerology",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "seer0": {
+                                    "value": 0,
+                                    "label": "seer",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "seer1": {
+                                    "value": 0,
+                                    "label": "seer",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "supernaturalBeings": {
+                            "value": 0,
+                            "label": "supernaturalBeings",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "beastiology": {
+                                    "value": 0,
+                                    "label": "beastiology",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "theLeftHandPath": {
+                            "value": 0,
+                            "label": "theLeftHandPath",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "blackMagic": {
+                                    "value": 0,
+                                    "label": "blackMagic",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "medicinaMentisSinistra": {
+                                    "value": 0,
+                                    "label": "medicinaMentisSinistra",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "theRightHandPath": {
+                            "value": 0,
+                            "label": "theRightHandPath",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "medicinaMentisDextera": {
+                                    "value": 0,
+                                    "label": "medicinaMentisDextera",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "whiteMagic": {
+                                    "value": 0,
+                                    "label": "whiteMagic",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "fighting": {
+                    "value": 1,
+                    "label": "fighting",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "battleExprience": {
+                            "value": 0,
+                            "label": "battleExprience",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "combatActions": {
+                                    "value": 0,
+                                    "label": "combatActions",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "combatReaction": {
+                                    "value": 0,
+                                    "label": "combatReaction",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "closeCombatWeapons": {
+                            "value": 0,
+                            "label": "closeCombatWeapons",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "oneHandWeaponsLeft": {
+                                    "value": 0,
+                                    "label": "oneHandWeaponsLeft",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "oneHandWeaponsRight": {
+                                    "value": 0,
+                                    "label": "oneHandWeaponsRight",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "twoHandsWeapons": {
+                                    "value": 0,
+                                    "label": "twoHandsWeapons",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "shields": {
+                                    "value": 0,
+                                    "label": "shields",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "rangedWeapons": {
+                            "value": 0,
+                            "label": "rangedWeapons",
+                            "trait": "perception",
+                            "modifier": [],
+                            "specialities": {
+                                "bows": {
+                                    "value": 0,
+                                    "label": "bows",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "pistolsLeft": {
+                                    "value": 0,
+                                    "label": "pistolsLeft",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "pistolsRight": {
+                                    "value": 0,
+                                    "label": "pistolsRight",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "rifles": {
+                                    "value": 0,
+                                    "label": "rifles",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "throwingWeaponsLeft": {
+                                    "value": 0,
+                                    "label": "throwingWeaponsLeft",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "throwingWeaponsRight": {
+                                    "value": 0,
+                                    "label": "throwingWeaponsRight",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "unarmedFight": {
+                            "value": 0,
+                            "label": "unarmedFight",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "brawling": {
+                                    "value": 0,
+                                    "label": "brawling",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "wrestling": {
+                                    "value": 0,
+                                    "label": "wrestling",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "professions": {
+                    "value": 1,
+                    "label": "professions",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "animalHandling": {
+                            "value": 0,
+                            "label": "animalHandling",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "animalCare": {
+                                    "value": 0,
+                                    "label": "animalCare",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "animalTraining0": {
+                                    "value": 0,
+                                    "label": "animalTraining",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "animalTraining1": {
+                                    "value": 0,
+                                    "label": "animalTraining",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "huntWithAnimals": {
+                                    "value": 0,
+                                    "label": "huntWithAnimals",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "crafting": {
+                            "value": 0,
+                            "label": "crafting",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "craftsmanship0": {
+                                    "value": 0,
+                                    "label": "craftsmanship",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "craftsmanship1": {
+                                    "value": 0,
+                                    "label": "craftsmanship",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "forgery0": {
+                                    "value": 0,
+                                    "label": "forgery",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "forgery1": {
+                                    "value": 0,
+                                    "label": "forgery",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "huntingAndFishing": {
+                            "value": 0,
+                            "label": "huntingAndFishing",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "fishing": {
+                                    "value": 0,
+                                    "label": "fishing",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "hunting": {
+                                    "value": 0,
+                                    "label": "hunting",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "tracking": {
+                                    "value": 0,
+                                    "label": "tracking",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "science": {
+                    "value": 1,
+                    "label": "science",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "appliedScience": {
+                            "value": 0,
+                            "label": "appliedScience",
+                            "trait": "intelligence",
+                            "modifier": [],
+                            "specialities": {
+                                "pharmaceutics": {
+                                    "value": 0,
+                                    "label": "pharmaceutics",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "technology": {
+                                    "value": 0,
+                                    "label": "technology",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "healthcare": {
+                            "value": 0,
+                            "label": "healthcare",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "healing": {
+                                    "value": 0,
+                                    "label": "healing",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "mentalCare": {
+                                    "value": 0,
+                                    "label": "mentalCare",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "naturalPhilosophy": {
+                            "value": 0,
+                            "label": "naturalPhilosophy",
+                            "trait": "intelligence",
+                            "modifier": [],
+                            "specialities": {
+                                "Biology": {
+                                    "value": 0,
+                                    "label": "biology",
+                                    "trait": "intelligence",
+                                    "modifier": []
+                                },
+                                "chemistry": {
+                                    "value": 0,
+                                    "label": "chemistry",
+                                    "trait": "intelligence",
+                                    "modifier": []
+                                },
+                                "geology": {
+                                    "value": 0,
+                                    "label": "geology",
+                                    "trait": "intelligence",
+                                    "modifier": []
+                                },
+                                "mathematics": {
+                                    "value": 0,
+                                    "label": "mathematics",
+                                    "trait": "intelligence",
+                                    "modifier": []
+                                },
+                                "physics": {
+                                    "value": 0,
+                                    "label": "physics",
+                                    "trait": "intelligence",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "transmutations": {
+                            "value": 0,
+                            "label": "transmutations",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "alchemy": {
+                                    "value": 0,
+                                    "label": "alchemy",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "stealth": {
+                    "value": 1,
+                    "label": "stealth",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "avoidance": {
+                            "value": 0,
+                            "label": "avoidance",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "disguises": {
+                                    "value": 0,
+                                    "label": "disguises",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "hideAndCamouflage": {
+                                    "value": 0,
+                                    "label": "hideAndCamouflage",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "sneaking": {
+                                    "value": 0,
+                                    "label": "sneaking",
+                                    "trait": "dexterity",
+                                    "modifier": []
+                                },
+                                "veiledStrike": {
+                                    "value": 0,
+                                    "label": "veiledStrike",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "detection": {
+                            "value": 0,
+                            "label": "detection",
+                            "trait": "perception",
+                            "modifier": [],
+                            "specialities": {
+                                "detetctHidden": {
+                                    "value": 0,
+                                    "label": "detetctHidden",
+                                    "trait": "perception",
+                                    "modifier": []
+                                },
+                                "lipReading": {
+                                    "value": 0,
+                                    "label": "lipReading",
+                                    "trait": "perception",
+                                    "modifier": []
+                                },
+                                "observation": {
+                                    "value": 0,
+                                    "label": "observation",
+                                    "trait": "perception",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "sleightOfHand": {
+                            "value": 0,
+                            "label": "sleightOfHand",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "armDisarmTraps": {
+                                    "value": 0,
+                                    "label": "armDisarmTraps",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "concealing": {
+                                    "value": 0,
+                                    "label": "concealing",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "lockPicking": {
+                                    "value": 0,
+                                    "label": "lockPicking",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "pickpocketing": {
+                                    "value": 0,
+                                    "label": "pickpocketing",
+                                    "trait": "dexterity",
+                                    "modifier": []
+                                },
+                                "thiefSigns": {
+                                    "value": 0,
+                                    "label": "thiefSigns",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "theology": {
+                    "value": 1,
+                    "label": "theology",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "deReligionibus": {
+                            "value": 0,
+                            "label": "deReligionibus",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "deSubRosaReligione0": {
+                                    "value": 0,
+                                    "label": "deSubRosaReligione",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "deSubRosaReligione1": {
+                                    "value": 0,
+                                    "label": "deSubRosaReligione",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "iconography0": {
+                                    "value": 0,
+                                    "label": "iconography",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "iconography1": {
+                                    "value": 0,
+                                    "label": "iconography",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "knowledgeOfMiracles0": {
+                                    "value": 0,
+                                    "label": "knowledgeOfMiracles",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "knowledgeOfMiracles1": {
+                                    "value": 0,
+                                    "label": "knowledgeOfMiracles",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "religio0": {
+                                    "value": 0,
+                                    "label": "religio",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "religio1": {
+                                    "value": 0,
+                                    "label": "religio",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "religiousLiterature0": {
+                                    "value": 0,
+                                    "label": "religiousLiterature",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "religiousLiterature1": {
+                                    "value": 0,
+                                    "label": "religiousLiterature",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "divineArts": {
+                            "value": 0,
+                            "label": "divineArts",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "holyPower": {
+                                    "value": 0,
+                                    "label": "holyPower",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "inciteCourage": {
+                                    "value": 0,
+                                    "label": "inciteCourage",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "mysticism": {
+                                    "value": 0,
+                                    "label": "mysticism",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "pastoralCare": {
+                                    "value": 0,
+                                    "label": "pastoralCare",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "wellTravelled": {
+                    "value": 1,
+                    "label": "wellTravelled",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "socialStudies": {
+                            "value": 0,
+                            "label": "socialStudies",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "geography0": {
+                                    "value": 0,
+                                    "label": "geography",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "geography1": {
+                                    "value": 0,
+                                    "label": "geography",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "geography2": {
+                                    "value": 0,
+                                    "label": "geography",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "geography3": {
+                                    "value": 0,
+                                    "label": "geography",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "knowledgeOfCulturesPeople0": {
+                                    "value": 0,
+                                    "label": "knowledgeOfCulturesPeople",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "knowledgeOfCulturesPeople1": {
+                                    "value": 0,
+                                    "label": "knowledgeOfCulturesPeople",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "knowledgeOfCulturesPeople2": {
+                                    "value": 0,
+                                    "label": "knowledgeOfCulturesPeople",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "knowledgeOfCulturesPeople3": {
+                                    "value": 0,
+                                    "label": "knowledgeOfCulturesPeople",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "powerSpheres0": {
+                                    "value": 0,
+                                    "label": "powerSpheres",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "powerSpheres1": {
+                                    "value": 0,
+                                    "label": "powerSpheres",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "powerSpheres2": {
+                                    "value": 0,
+                                    "label": "powerSpheres",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                },
+                                "powerSpheres3": {
+                                    "value": 0,
+                                    "label": "powerSpheres",
+                                    "trait": "",
+                                    "hasChoice": true,
+                                    "choice": "",
+                                    "modifier": []
+                                }
+                            }
+                        },
+                        "survival": {
+                            "value": 0,
+                            "label": "survival",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "camping": {
+                                    "value": 0,
+                                    "label": "camping",
+                                    "trait": "",
+                                    "modifier": []
+                                },
+                                "travelling": {
+                                    "value": 0,
+                                    "label": "travelling",
+                                    "trait": "",
+                                    "modifier": []
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "combat": {
+                "stats": {
+                    "initiative": {
+                        "value": 0
+                    },
+                    "freePoints": {
+                        "value": 0
+                    },
+                    "closeCombatWeapons": {
+                        "value": 0
+                    },
+                    "rangedWeapons": {
+                        "value": 0
+                    },
+                    "unarmed": {
+                        "value": 0
+                    },
+                    "nonDominantHand": {
+                        "value": 0
+                    }
+                },
+                "specialities": {
+                    "bows": 0,
+                    "rifles": 0,
+                    "pistols": 0,
+                    "oneHandWeapons": 0,
+                    "twoHandedWeapons": 0,
+                    "throwingWeapons": 0
+                }
+            },
+            "groups": {}
+        },
+        "Non-Character": {
+            "editMode": true,
+            "biography": "",
+            "notes": "",
+            "health": {
+                "value": 32,
+                "label": "health",
+                "damage": 0,
+                "min": 0,
+                "max": 32,
+                "penalty": 0,
+                "traits": [
+                    "constitution",
+                    "health"
+                ]
+            },
+            "sanity": {
+                "value": 32,
+                "label": "sanity",
+                "damage": 0,
+                "min": 0,
+                "max": 32,
+                "penalty": 0,
+                "traits": [
+                    "intelligence",
+                    "psyche"
+                ]
+            },
+            "registry": {
+                "name": "",
+                "socialClass": "",
+                "nationality": "",
+                "profession": "",
+                "language": "",
+                "gender": "",
+                "age": "",
+                "height": "",
+                "weight": "",
+                "dominantHand": "right",
+                "movement": 10,
+                "vogue": {
+                    "value": 0,
+                    "fashion": 0,
+                    "quality": 0
+                },
+                "money": {
+                    "ducats": 0,
+                    "marks": 0
+                }
+            },
+            "spheres": {
+                "adminstrative": {
+                    "value": 0,
+                    "label": "adminstrative"
+                },
+                "trading": {
+                    "value": 0,
+                    "label": "trading"
+                },
+                "scientific": {
+                    "value": 0,
+                    "label": "scientific"
+                },
+                "occult": {
+                    "value": 0,
+                    "label": "occult"
+                },
+                "military": {
+                    "value": 0,
+                    "label": "military"
+                },
+                "lawless": {
+                    "value": 0,
+                    "label": "lawless"
+                },
+                "holy": {
+                    "value": 0,
+                    "label": "holy"
+                },
+                "entertainment": {
+                    "value": 0,
+                    "label": "art"
+                }
+            },
+            "traits": {
+                "charisma": {
+                    "value": 0,
+                    "label": "charisma"
+                },
+                "constitution": {
+                    "value": 0,
+                    "label": "constitution"
+                },
+                "dexterity": {
+                    "value": 0,
+                    "label": "dexterity"
+                },
+                "intelligence": {
+                    "value": 0,
+                    "label": "intelligence"
+                },
+                "perception": {
+                    "value": 0,
+                    "label": "perception"
+                },
+                "psyche": {
+                    "value": 0,
+                    "label": "psyche"
+                },
+                "health": {
+                    "value": 0,
+                    "label": "health"
+                }
+            },
+            "skills": {
+                "agility": {
+                    "value": 1,
+                    "label": "agility",
+                    "disciplines": {
+                        "bodyControl": {
+                            "value": 0,
+                            "label": "bodyControl",
+                            "trait": "dexterity",
+                            "specialities": {
+                                "ambidexterity": {
+                                    "value": 0,
+                                    "label": "ambidexterity"
+                                },
+                                "evade": {
+                                    "value": 0,
+                                    "label": "evade"
+                                },
+                                "parkour": {
+                                    "value": 0,
+                                    "label": "parkour"
+                                }
+                            }
+                        },
+                        "horsemanship": {
+                            "value": 0,
+                            "label": "horsemanship",
+                            "trait": "dexterity",
+                            "modifier": [],
+                            "specialities": {
+                                "drivingWagon": {
+                                    "value": 0,
+                                    "label": "drivingWagon"
+                                },
+                                "riding": {
+                                    "value": 0,
+                                    "label": "riding"
+                                }
+                            }
+                        },
+                        "water": {
+                            "value": 0,
+                            "label": "water",
+                            "trait": "dexterity",
+                            "modifier": [],
+                            "specialities": {
+                                "swimming": {
+                                    "value": 0,
+                                    "label": "swimming"
+                                },
+                                "diving": {
+                                    "value": 0,
+                                    "label": "diving"
+                                }
+                            }
+                        }
+                    }
+                },
+                "communication": {
+                    "value": 1,
+                    "label": "communication",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "etiquette": {
+                            "value": 0,
+                            "label": "etiquette",
+                            "trait": "charisma",
+                            "modifier": [],
+                            "specialities": {
+                                "socialIntercourse0": {
+                                    "value": 0,
+                                    "label": "socialIntercourse",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "socialIntercourse2": {
+                                    "value": 0,
+                                    "label": "socialIntercourse",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "socialIntercourse3": {
+                                    "value": 0,
+                                    "label": "socialIntercourse",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "socialIntercourse4": {
+                                    "value": 0,
+                                    "label": "socialIntercourse",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "vogue0": {
+                                    "value": 0,
+                                    "label": "vogue",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "vogue2": {
+                                    "value": 0,
+                                    "label": "vogue",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "vogue3": {
+                                    "value": 0,
+                                    "label": "vogue",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                }
+                            }
+                        },
+                        "languages": {
+                            "value": 0,
+                            "label": "languages",
+                            "trait": "intelligence",
+                            "modifier": [],
+                            "specialities": {
+                                "foreignLanguage0": {
+                                    "value": 0,
+                                    "label": "foreignLanguage",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "foreignLanguage1": {
+                                    "value": 0,
+                                    "label": "foreignLanguage",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "foreignLanguage2": {
+                                    "value": 0,
+                                    "label": "foreignLanguage",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "readingAndWriting0": {
+                                    "value": 0,
+                                    "label": "readingAndWriting",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "readingAndWriting1": {
+                                    "value": 0,
+                                    "label": "readingAndWriting",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "nativeLanguage": {
+                                    "value": 0,
+                                    "label": "nativeLanguage",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                }
+                            }
+                        },
+                        "rhetoric": {
+                            "value": 0,
+                            "label": "rhetoric",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "bartering": {
+                                    "value": 0,
+                                    "label": "bartering"
+                                },
+                                "persuasion": {
+                                    "value": 0,
+                                    "label": "persuasion"
+                                }
+                            }
+                        }
+                    }
+                },
+                "culture": {
+                    "value": 1,
+                    "label": "culture",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "civics": {
+                            "value": 0,
+                            "label": "civics",
+                            "trait": "intelligence",
+                            "modifier": [],
+                            "specialities": {
+                                "administration": {
+                                    "value": 0,
+                                    "label": "administration"
+                                },
+                                "bribery": {
+                                    "value": 0,
+                                    "label": "bribery"
+                                },
+                                "economics": {
+                                    "value": 0,
+                                    "label": "economics"
+                                },
+                                "heraldry": {
+                                    "value": 0,
+                                    "label": "heraldry"
+                                },
+                                "law": {
+                                    "value": 0,
+                                    "label": "law"
+                                }
+                            }
+                        },
+                        "humanities": {
+                            "value": 0,
+                            "label": "humanities",
+                            "trait": "intelligence",
+                            "modifier": [],
+                            "specialities": {
+                                "archaeology": {
+                                    "value": 0,
+                                    "label": "archaeology"
+                                },
+                                "history": {
+                                    "value": 0,
+                                    "label": "history"
+                                },
+                                "literatureAndArts": {
+                                    "value": 0,
+                                    "label": "literatureAndArts"
+                                },
+                                "philosophy": {
+                                    "value": 0,
+                                    "label": "philosophy"
+                                }
+                            }
+                        }
+                    }
+                },
+                "entertainment": {
+                    "value": 1,
+                    "label": "entertainment",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "actingAndDance": {
+                            "value": 0,
+                            "label": "actingAndDance",
+                            "trait": "charisma",
+                            "modifier": [],
+                            "specialities": {
+                                "acting": {
+                                    "value": 0,
+                                    "label": "acting"
+                                },
+                                "choreography": {
+                                    "value": 0,
+                                    "label": "choreography"
+                                },
+                                "dancing0": {
+                                    "value": 0,
+                                    "label": "dancing",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "dancing1": {
+                                    "value": 0,
+                                    "label": "dancing",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                }
+                            }
+                        },
+                        "circusActs": {
+                            "value": 0,
+                            "label": "circusActs",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "fakirTricks0": {
+                                    "value": 0,
+                                    "label": "fakirTricks"
+                                },
+                                "juggling": {
+                                    "value": 0,
+                                    "label": "juggling"
+                                },
+                                "ropeWalking": {
+                                    "value": 0,
+                                    "label": "ropeWalking"
+                                }
+                            }
+                        },
+                        "gambling": {
+                            "value": 0,
+                            "label": "gambling",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "cheating": {
+                                    "value": 0,
+                                    "label": "cheating"
+                                },
+                                "games0": {
+                                    "value": 0,
+                                    "label": "games",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "games1": {
+                                    "value": 0,
+                                    "label": "games",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "illicitGaming": {
+                                    "value": 0,
+                                    "label": "illicitGaming"
+                                }
+                            }
+                        },
+                        "music": {
+                            "value": 0,
+                            "label": "music",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "composing": {
+                                    "value": 0,
+                                    "label": "composing"
+                                },
+                                "playingInstrument0": {
+                                    "value": 0,
+                                    "label": "playingInstrument",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "playingInstrument1": {
+                                    "value": 0,
+                                    "label": "playingInstrument",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "singing0": {
+                                    "value": 0,
+                                    "label": "singing",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "singing1": {
+                                    "value": 0,
+                                    "label": "singing",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                }
+                            }
+                        }
+                    }
+                },
+                "esotericism": {
+                    "value": 1,
+                    "label": "esotericism",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "deSodaliciorum": {
+                            "value": 0,
+                            "label": "deSodaliciorum",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "esotericSymbolism": {
+                                    "value": 0,
+                                    "label": "esotericSymbolism"
+                                },
+                                "occultLiterature": {
+                                    "value": 0,
+                                    "label": "occultLiterature"
+                                },
+                                "subRosaDoctus0": {
+                                    "value": 0,
+                                    "label": "subRosaDoctus",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "subRosaDoctus1": {
+                                    "value": 0,
+                                    "label": "subRosaDoctus",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "subRosaDoctus2": {
+                                    "value": 0,
+                                    "label": "subRosaDoctus",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                }
+                            }
+                        },
+                        "divination": {
+                            "value": 0,
+                            "label": "divination",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "numerology": {
+                                    "value": 0,
+                                    "label": "numerology"
+                                },
+                                "seer0": {
+                                    "value": 0,
+                                    "label": "seer",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "seer1": {
+                                    "value": 0,
+                                    "label": "seer",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                }
+                            }
+                        },
+                        "supernaturalBeings": {
+                            "value": 0,
+                            "label": "supernaturalBeings",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "beastiology": {
+                                    "value": 0,
+                                    "label": "beastiology"
+                                }
+                            }
+                        },
+                        "theLeftHandPath": {
+                            "value": 0,
+                            "label": "theLeftHandPath",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "blackMagic": {
+                                    "value": 0,
+                                    "label": "blackMagic"
+                                },
+                                "medicinaMentisSinistra": {
+                                    "value": 0,
+                                    "label": "medicinaMentisSinistra"
+                                }
+                            }
+                        },
+                        "theRightHandPath": {
+                            "value": 0,
+                            "label": "theRightHandPath",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "medicinaMentisDextera": {
+                                    "value": 0,
+                                    "label": "medicinaMentisDextera"
+                                },
+                                "whiteMagic": {
+                                    "value": 0,
+                                    "label": "whiteMagic"
+                                }
+                            }
+                        }
+                    }
+                },
+                "fighting": {
+                    "value": 1,
+                    "label": "fighting",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "battleExprience": {
+                            "value": 0,
+                            "label": "battleExprience",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "combatActions": {
+                                    "value": 0,
+                                    "label": "combatActions"
+                                },
+                                "combatReaction": {
+                                    "value": 0,
+                                    "label": "combatReaction"
+                                }
+                            }
+                        },
+                        "closeCombatWeapons": {
+                            "value": 0,
+                            "label": "closeCombatWeapons",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "oneHandWeaponsLeft": {
+                                    "value": 0,
+                                    "label": "oneHandWeaponsLeft"
+                                },
+                                "oneHandWeaponsRight": {
+                                    "value": 0,
+                                    "label": "oneHandWeaponsRight"
+                                },
+                                "twoHandsWeapons": {
+                                    "value": 0,
+                                    "label": "twoHandsWeapons"
+                                },
+                                "shields": {
+                                    "value": 0,
+                                    "label": "shields"
+                                }
+                            }
+                        },
+                        "rangedWeapons": {
+                            "value": 0,
+                            "label": "rangedWeapons",
+                            "trait": "perception",
+                            "modifier": [],
+                            "specialities": {
+                                "bows": {
+                                    "value": 0,
+                                    "label": "bows"
+                                },
+                                "pistolsLeft": {
+                                    "value": 0,
+                                    "label": "pistolsLeft"
+                                },
+                                "pistolsRight": {
+                                    "value": 0,
+                                    "label": "pistolsRight"
+                                },
+                                "rifles": {
+                                    "value": 0,
+                                    "label": "rifles"
+                                },
+                                "throwingWeaponsLeft": {
+                                    "value": 0,
+                                    "label": "throwingWeaponsLeft"
+                                },
+                                "throwingWeaponsRight": {
+                                    "value": 0,
+                                    "label": "throwingWeaponsRight"
+                                }
+                            }
+                        },
+                        "unarmedFight": {
+                            "value": 0,
+                            "label": "unarmedFight",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "brawling": {
+                                    "value": 0,
+                                    "label": "brawling"
+                                },
+                                "wrestling": {
+                                    "value": 0,
+                                    "label": "wrestling"
+                                }
+                            }
+                        }
+                    }
+                },
+                "professions": {
+                    "value": 1,
+                    "label": "professions",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "animalHandling": {
+                            "value": 0,
+                            "label": "animalHandling",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "animalCare": {
+                                    "value": 0,
+                                    "label": "animalCare"
+                                },
+                                "animalTraining0": {
+                                    "value": 0,
+                                    "label": "animalTraining",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "animalTraining1": {
+                                    "value": 0,
+                                    "label": "animalTraining",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "huntWithAnimals": {
+                                    "value": 0,
+                                    "label": "huntWithAnimals"
+                                }
+                            }
+                        },
+                        "crafting": {
+                            "value": 0,
+                            "label": "crafting",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "craftsmanship0": {
+                                    "value": 0,
+                                    "label": "craftsmanship",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "craftsmanship1": {
+                                    "value": 0,
+                                    "label": "craftsmanship",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "forgery0": {
+                                    "value": 0,
+                                    "label": "forgery",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "forgery1": {
+                                    "value": 0,
+                                    "label": "forgery",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                }
+                            }
+                        },
+                        "huntingAndFishing": {
+                            "value": 0,
+                            "label": "huntingAndFishing",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "fishing": {
+                                    "value": 0,
+                                    "label": "fishing"
+                                },
+                                "hunting": {
+                                    "value": 0,
+                                    "label": "hunting"
+                                },
+                                "tracking": {
+                                    "value": 0,
+                                    "label": "tracking"
+                                }
+                            }
+                        }
+                    }
+                },
+                "science": {
+                    "value": 1,
+                    "label": "science",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "appliedScience": {
+                            "value": 0,
+                            "label": "appliedScience",
+                            "trait": "intelligence",
+                            "modifier": [],
+                            "specialities": {
+                                "pharmaceutics": {
+                                    "value": 0,
+                                    "label": "pharmaceutics"
+                                },
+                                "technology": {
+                                    "value": 0,
+                                    "label": "technology"
+                                }
+                            }
+                        },
+                        "healthcare": {
+                            "value": 0,
+                            "label": "healthcare",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "healing": {
+                                    "value": 0,
+                                    "label": "healing"
+                                },
+                                "mentalCare": {
+                                    "value": 0,
+                                    "label": "mentalCare"
+                                }
+                            }
+                        },
+                        "naturalPhilosophy": {
+                            "value": 0,
+                            "label": "naturalPhilosophy",
+                            "trait": "intelligence",
+                            "modifier": [],
+                            "specialities": {
+                                "Biology": {
+                                    "value": 0,
+                                    "label": "biology",
+                                    "trait": "intelligence"
+                                },
+                                "chemistry": {
+                                    "value": 0,
+                                    "label": "chemistry",
+                                    "trait": "intelligence"
+                                },
+                                "geology": {
+                                    "value": 0,
+                                    "label": "geology",
+                                    "trait": "intelligence"
+                                },
+                                "mathematics": {
+                                    "value": 0,
+                                    "label": "mathematics",
+                                    "trait": "intelligence"
+                                },
+                                "physics": {
+                                    "value": 0,
+                                    "label": "physics",
+                                    "trait": "intelligence"
+                                }
+                            }
+                        },
+                        "transmutations": {
+                            "value": 0,
+                            "label": "transmutations",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "alchemy": {
+                                    "value": 0,
+                                    "label": "alchemy"
+                                }
+                            }
+                        }
+                    }
+                },
+                "stealth": {
+                    "value": 1,
+                    "label": "stealth",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "avoidance": {
+                            "value": 0,
+                            "label": "avoidance",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "disguises": {
+                                    "value": 0,
+                                    "label": "disguises"
+                                },
+                                "hideAndCamouflage": {
+                                    "value": 0,
+                                    "label": "hideAndCamouflage"
+                                },
+                                "sneaking": {
+                                    "value": 0,
+                                    "label": "sneaking",
+                                    "trait": "dexterity"
+                                },
+                                "veiledStrike": {
+                                    "value": 0,
+                                    "label": "veiledStrike"
+                                }
+                            }
+                        },
+                        "detection": {
+                            "value": 0,
+                            "label": "detection",
+                            "trait": "perception",
+                            "modifier": [],
+                            "specialities": {
+                                "detetctHidden": {
+                                    "value": 0,
+                                    "label": "detetctHidden",
+                                    "trait": "perception"
+                                },
+                                "lipReading": {
+                                    "value": 0,
+                                    "label": "lipReading",
+                                    "trait": "perception"
+                                },
+                                "observation": {
+                                    "value": 0,
+                                    "label": "observation",
+                                    "trait": "perception"
+                                }
+                            }
+                        },
+                        "sleightOfHand": {
+                            "value": 0,
+                            "label": "sleightOfHand",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "armDisarmTraps": {
+                                    "value": 0,
+                                    "label": "armDisarmTraps"
+                                },
+                                "concealing": {
+                                    "value": 0,
+                                    "label": "concealing"
+                                },
+                                "lockPicking": {
+                                    "value": 0,
+                                    "label": "lockPicking"
+                                },
+                                "pickpocketing": {
+                                    "value": 0,
+                                    "label": "pickpocketing",
+                                    "trait": "dexterity"
+                                },
+                                "thiefSigns": {
+                                    "value": 0,
+                                    "label": "thiefSigns"
+                                }
+                            }
+                        }
+                    }
+                },
+                "theology": {
+                    "value": 1,
+                    "label": "theology",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "deReligionibus": {
+                            "value": 0,
+                            "label": "deReligionibus",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "deSubRosaReligione0": {
+                                    "value": 0,
+                                    "label": "deSubRosaReligione",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "deSubRosaReligione1": {
+                                    "value": 0,
+                                    "label": "deSubRosaReligione",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "iconography0": {
+                                    "value": 0,
+                                    "label": "iconography",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "iconography1": {
+                                    "value": 0,
+                                    "label": "iconography",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "knowledgeOfMiracles0": {
+                                    "value": 0,
+                                    "label": "knowledgeOfMiracles",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "knowledgeOfMiracles1": {
+                                    "value": 0,
+                                    "label": "knowledgeOfMiracles",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "religio0": {
+                                    "value": 0,
+                                    "label": "religio",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "religio1": {
+                                    "value": 0,
+                                    "label": "religio",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "religiousLiterature0": {
+                                    "value": 0,
+                                    "label": "religiousLiterature",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "religiousLiterature1": {
+                                    "value": 0,
+                                    "label": "religiousLiterature",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                }
+                            }
+                        },
+                        "divineArts": {
+                            "value": 0,
+                            "label": "divineArts",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "holyPower": {
+                                    "value": 0,
+                                    "label": "holyPower"
+                                },
+                                "inciteCourage": {
+                                    "value": 0,
+                                    "label": "inciteCourage"
+                                },
+                                "mysticism": {
+                                    "value": 0,
+                                    "label": "mysticism"
+                                },
+                                "pastoralCare": {
+                                    "value": 0,
+                                    "label": "pastoralCare"
+                                }
+                            }
+                        }
+                    }
+                },
+                "wellTravelled": {
+                    "value": 1,
+                    "label": "wellTravelled",
+                    "trait": "",
+                    "modifier": [],
+                    "disciplines": {
+                        "socialStudies": {
+                            "value": 0,
+                            "label": "socialStudies",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "geography0": {
+                                    "value": 0,
+                                    "label": "geography",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "geography1": {
+                                    "value": 0,
+                                    "label": "geography",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "geography2": {
+                                    "value": 0,
+                                    "label": "geography",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "geography3": {
+                                    "value": 0,
+                                    "label": "geography",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "knowledgeOfCulturesPeople0": {
+                                    "value": 0,
+                                    "label": "knowledgeOfCulturesPeople",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "knowledgeOfCulturesPeople1": {
+                                    "value": 0,
+                                    "label": "knowledgeOfCulturesPeople",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "knowledgeOfCulturesPeople2": {
+                                    "value": 0,
+                                    "label": "knowledgeOfCulturesPeople",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "knowledgeOfCulturesPeople3": {
+                                    "value": 0,
+                                    "label": "knowledgeOfCulturesPeople",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "powerSpheres0": {
+                                    "value": 0,
+                                    "label": "powerSpheres",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "powerSpheres1": {
+                                    "value": 0,
+                                    "label": "powerSpheres",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "powerSpheres2": {
+                                    "value": 0,
+                                    "label": "powerSpheres",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                },
+                                "powerSpheres3": {
+                                    "value": 0,
+                                    "label": "powerSpheres",
+                                    "hasChoice": true,
+                                    "choice": ""
+                                }
+                            }
+                        },
+                        "survival": {
+                            "value": 0,
+                            "label": "survival",
+                            "trait": "",
+                            "modifier": [],
+                            "specialities": {
+                                "camping": {
+                                    "value": 0,
+                                    "label": "camping"
+                                },
+                                "travelling": {
+                                    "value": 0,
+                                    "label": "travelling"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "combat": {
+                "stats": {
+                    "initiative": {
+                        "value": 0
+                    },
+                    "freePoints": {
+                        "value": 0
+                    },
+                    "closeCombatWeapons": {
+                        "value": 0
+                    },
+                    "rangedWeapons": {
+                        "value": 0
+                    },
+                    "unarmed": {
+                        "value": 0
+                    },
+                    "nonDominantHand": {
+                        "value": 0
+                    }
+                }
+            },
+            "groups": {}
+        }
+    },
+    "Item": {
+        "types": [
+            "Armor",
+            "Apparel",
+            "Equipment",
+            "Kit",
+            "Weapon"
+        ],
+        "Armor": {
+            "price2": {
+                "ducats": 0,
+                "marks": 0
+            },
+            "weight": "",
+            "editMode": true
+        },
+        "Apparel": {
+            "label": "",
+            "gender": "",
+            "part": "",
+            "vogue": 0,
+            "quality": 0,
+            "impression": 0,
+            "weight": 0,
+            "price2": {
+                "ducats": 0,
+                "marks": 0
+            },
+            "priceModified": 0,
+            "priceModified2": {
+                "ducats": 0,
+                "marks": 0
+            },
+            "quantity": 1,
+            "editMode": true
+        },
+        "Equipment": {
+            "label": "",
+            "group": "",
+            "quality": "",
+            "weight": 0,
+            "fashion": 0,
+            "price2": {
+                "ducats": 0,
+                "marks": 0
+            },
+            "quantity": 1,
+            "editMode": true
+        },
+        "Kit": {
+            "label": "",
+            "size": "",
+            "weight": 0,
+            "price2": {
+                "ducats": 0,
+                "marks": 0
+            },
+            "quantity": 1,
+            "editMode": true
+        },
+        "Weapon": {
+            "label": "",
+            "group": "",
+            "hands": 1,
+            "weaponsActions": null,
+            "quality": "",
+            "projectilesPerTurn": null,
+            "initiativeModifier": 0,
+            "damage": "1d10",
+            "openRollValue": 0,
+            "misfire": 20,
+            "objectModifier": 0,
+            "breakingPoint": 0,
+            "weight": 0,
+            "minimumRange": 0,
+            "shortRange": 0,
+            "longRange": 0,
+            "price2": {
+                "ducats": 0,
+                "marks": 0
+            },
+            "editMode": true
+        }
+    }
+}

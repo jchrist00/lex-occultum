@@ -1,0 +1,61 @@
+<table class="shop-area-equipments">
+    <tr>
+        {{#each apparels as |item key|}}
+        <td class="column">
+            <table class="shop-area">
+                <tr>
+                    <th class="title" colspan="5">
+                        {{localize key}}
+                    </th>
+                </tr>
+                <tr class="sub-headers">
+                    <th>
+                        {{localize "name"}}
+                    </th>
+                    <th>
+                        {{localize "part"}}
+                    </th>
+                    <th>
+                        {{localize "weight"}}
+                    </th>
+                    <th>
+                        {{localize "price"}}
+                    </th>
+                    <th></th>
+                </tr>
+                {{#each item as |item1|}}
+                {{#each item1 as |item2|}}
+                <tr>
+                    <td class="label">
+                        {{localize item2.system.label}}
+                    </td>
+                    <td>
+                        {{#each item2.system.part as |item3| }}
+                        {{localize item3}}
+                        {{#if (gt item2.system.part.length 1) }}
+                        <br />
+                        {{/if}}
+                        {{/each}}
+                    </td>
+                    <td>
+                        {{weight item2.system.weight}}
+                    </td>
+                    <td>
+                        {{item2.system.price2.ducats}}.{{marks item2.system.price2.marks}}
+                    </td>
+                    <td>
+                        <a class="quality-choice-item" data-item-id='{{item2.id}}' data-group='apparels'
+                            title='{{localize "purchase"}}'> <i class="fa fa-shopping-bag"></i>
+                        </a>
+                    </td>
+                </tr>
+                {{/each}}
+                {{/each}}
+            </table>
+        </td>
+        {{/each}}
+    </tr>
+
+
+
+</table>

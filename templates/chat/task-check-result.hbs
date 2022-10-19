@@ -1,0 +1,58 @@
+<table class="chat-area">
+  <tr>
+    <td colspan="3">
+      <div class="result">
+        <div class="header">
+          {{#if (ne actorImg "") }}
+          <img src='{{actorImg}}' width="40" />
+          {{/if}}
+          {{#if (ne item.img "") }}
+          <img src='{{item.img}}' width="40" />
+          {{/if}}
+          {{localize taskCheckName}}
+        </div>
+        <div class='content {{resultGrade}} tags'>
+          {{{gameEffect}}}
+          {{#if item.damageButton}}
+          <div>
+            <a class="damage-roll button" data-actor-img='{{actorImg}}' data-weapon-img='{{item.img}}'
+              data-weapon-label='{{item.label}}' data-damage-formula='{{item.damageFormula}}'
+              data-open-roll-value='{{item.openRollValue}}'>
+              {{localize "damage"}}
+            </a>
+          </div>
+          {{/if}}
+          {{#if item.misfireButton}}
+          <div>
+            <a class="misfire-roll button" data-actor-img='{{actorImg}}' data-weapon-img='{{item.img}}'
+              data-weapon-label='{{item.label}}'>
+              {{localize "misfire"}}
+            </a>
+          </div>
+          {{/if}}
+        </div>
+      </div>
+    </td>
+  </tr>
+  {{!-- <tr>
+    <td colspan="3">
+      {{{roll}}}
+    </td>
+  </tr> --}}
+  <tr>
+    <td colspan="3">
+      <div class="tags">
+        {{#each rollModifiers as |miniModifier|}}
+        <div class="tag {{miniModifier.css}}">
+          {{#if (eq miniModifier.css "item-info")}}
+          {{localize miniModifier.label}}: {{miniModifier.value}} {{miniModifier.grade}}
+          {{else}}
+          {{sign miniModifier.value}} {{miniModifier.grade}} {{localize miniModifier.label}}{{#if (eq miniModifier.type "selectable")}}: {{localize miniModifier.selectedLabel}}{{/if}}
+          {{/if}}
+        </div>
+        <br />
+        {{/each}}
+      </div>
+    </td>
+  </tr>
+</table>

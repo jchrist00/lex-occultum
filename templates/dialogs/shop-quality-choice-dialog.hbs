@@ -1,0 +1,57 @@
+<div class="title" style="white-space:unset;">
+    {{localize item.system.label}}
+</div>
+
+<table class="shop-item-quality-choice">
+    <tr>
+        <th>
+            {{localize "quality"}}
+        </th>
+        <td>
+            <a class="property-edit edit" data-parameters='quality;{{item.system.quality}};-5;5;1'
+                title='{{localize "editValue1"}}'>{{sign item.system.quality}}</a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "vogue"}}
+        </th>
+        <td>
+            <a class="property-edit edit" data-parameters='vogue;{{item.system.vogue}};-5;5;1'
+                title='{{localize "editValue1"}}'>{{sign item.system.vogue}}</a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "impression"}}
+        </th>
+        <td>
+            {{sign item.system.impression}}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <hr>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            {{localize "price"}}
+        </th>
+        <td>
+            {{item.system.priceModified2.ducats}},{{marks item.system.priceModified2.marks}}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <hr>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button type="button" class="purchase-item">
+                <i class="fas fa-shopping-bag"> {{localize "purchase"}}</i>
+            </button>
+        </td>
+    </tr>
+</table>

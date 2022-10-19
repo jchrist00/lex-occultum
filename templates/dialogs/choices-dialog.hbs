@@ -1,0 +1,50 @@
+<div class="title">
+    {{localize entityLabel}}: {{localize header}}
+</div>
+<table class="choices-area">
+    <tr>
+        <th>
+            {{localize "selected"}}
+        </th>
+        {{#each choicesFields}}
+        <th>{{localize this}}</th>
+        {{/each }}
+        {{!-- <th>
+            {{localize "description"}}
+        </th> --}}
+    </tr>
+    {{#each choices as |item key|}}
+    <tr>
+        <td class="selection">
+            <input class="choice-selected" data-choice-value={{item.value}} type="checkbox" {{#if item.selected}}
+                checked{{/if}} {{#if item.disabled}} disabled{{/if}} />
+        </td>
+        {{#each ../choicesFields}}
+        {{#if (isNumber (lookup item this))}}
+        <td class="number-value">
+            {{sign (lookup item this)}}
+        </td>
+        {{else}}
+        <td>
+            {{{localize (lookup item this)}}}
+        </td>
+        {{/if}}
+        {{/each }}
+        {{!-- <td class="description">
+            {{{item.description}}}
+        </td> --}}
+    </tr>
+    {{/each}}
+    {{!-- <tr>
+        <td colspan="99">
+            <hr>
+        </td>
+    </tr> --}}
+    <tr>
+        <td class="buttons" colspan="99">
+            <button type="button" class="save">
+                <i class="fas fa-save"> {{localize "save"}}</i>
+            </button>
+        </td>
+    </tr>
+</table>

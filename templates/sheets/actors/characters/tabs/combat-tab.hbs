@@ -1,0 +1,202 @@
+<div class="title">
+    {{localize "fighting"}}
+</div>
+
+<table class="combat-stats-area">
+    <tr>
+        {{#each system.combat.stats as |item key|}}
+        <td>
+            <b>
+                <div class="combat-points">{{sign item.value}}</div>
+            </b>
+            <hr>
+            <div style="white-space: nowrap;">
+                {{#if (eq key "nonDominantHand")}}
+                {{localize "hand"}} {{#if (eq this.actor.system.dominantHand "right")}}
+                {{localize "left"}}
+                {{else}}
+                {{localize "right"}}
+                {{/if}}
+                {{else}}
+                {{localize key}}
+                {{/if}}
+                {{#if (or (eq key "initiative") (eq key "freePoints") (eq key "nonDominantHand") )
+                }} <i class="fas fa-square-info description-pop-up"
+                    data-item-description='{{{localize item.description}}}'></i>{{/if}}
+            </div>
+        </td>
+        {{/each}}
+    </tr>
+</table>
+
+<hr>
+
+<div class="title">
+    {{localize "weapons"}}
+</div>
+
+<table class="weapons-area">
+    <tr class="sub-headers">
+        <th></th>
+        <th>
+            {{localize "sXdx"}}
+        </th>
+        <th colspan="2">
+            {{localize "PC"}}
+        </th>
+        <th>
+            {{localize "label"}}
+        </th>
+        <th>
+            {{localize "quality"}}
+        </th>
+        <th>
+            {{localize "hands"}}
+        </th>
+        <th>
+            <div title='{{localize "initiativeModifier"}}'>
+                {{localize "IM"}}
+            </div>
+        </th>
+        <th>
+            <span title='{{localize "projectilesPerTurn"}} / {{localize "weaponsActions"}}'>
+                {{localize "PT"}} / {{localize "WA"}}
+            </span>
+        </th>
+        <th>
+            <span title='{{localize "misfire"}}'>
+                {{localize "M"}}
+            </span>
+        </th>
+        <th>
+            <span title='{{localize "objectModifier"}}'>
+                {{localize "OM"}}
+            </span>
+        </th>
+        <th>
+            <span title='{{localize "breakingPoint"}}'>
+                {{localize "BP"}}
+            </span>
+        </th>
+        <th>
+            {{localize "damage"}}
+        </th>
+        <th>
+            {{localize "shortRange"}}
+        </th>
+        <th>
+            {{localize "longRange"}}
+        </th>
+        <th>
+            {{localize "KG"}}
+        </th>
+    </tr>
+    {{#each system.weapons as |item|}}
+    <tr>
+        <td class="image">
+            <img src="{{item.img}}" title="{{item.name}}" height="30" width="30" />
+        </td>
+        <td>
+            <a class='item-control hand-use {{#if (includes item.system.handUse "left")}}active{{/if}}'
+                title='{{localize "leftHand"}}' data-item-id='{{item.id}}' data-item-hand="left">
+                <i class="fas fa-hand-paper"></i>
+            </a>
+            <a class='item-control hand-use {{#if (includes item.system.handUse "right") }}active{{/if}}'
+                title='{{localize "rightHand"}}' data-item-id='{{item.id}}' data-item-hand="right">
+                <i class="fas fa-hand-paper"></i>
+            </a>
+        </td>
+        {{#if (or (eq item.system.handUse "left&right" ) (eq item.system.hands 2))}}
+        <td colspan="2">
+            <a class="weapon-task button" data-weapon-id='{{item.id}}' data-weapon-group='{{item.system.group}}'
+                data-weapons-hands='{{item.system.hands}}' data-roll-hand-use="twoHands">
+                {{!-- title='{{localize "roll"}}!'> --}}
+                {{item.system.combatPoints.twoHands.value}}
+                <i class="fas fa-square-info description-pop-up"
+                    data-item-description='{{{localize item.system.combatPoints.twoHands.description}}}'></i>
+            </a>
+        </td>
+        {{else}}
+        <td>
+            <a class="weapon-task button" data-weapon-id='{{item.id}}' data-weapon-group='{{item.system.group}}'
+                data-weapons-hands='{{item.system.hands}}' data-roll-hand-use="leftHand">
+                {{!-- title='{{localize "roll"}}!'> --}}
+                {{item.system.combatPoints.leftHand.value}}
+                <i class="fas fa-square-info description-pop-up"
+                    data-item-description='{{{localize item.system.combatPoints.leftHand.description}}}'></i>
+            </a>
+        </td>
+        <td> <a class="weapon-task button" data-weapon-id='{{item.id}}' data-weapon-group='{{item.system.group}}'
+                data-weapons-hands='{{item.system.hands}}' data-roll-hand-use="rightHand">
+                {{!-- title='{{localize "roll"}}!'> --}}
+                {{item.system.combatPoints.rightHand.value}}
+                <i class="fas fa-square-info description-pop-up"
+                    data-item-description='{{{localize item.system.combatPoints.rightHand.description}}}'></i>
+            </a>
+        </td>
+        {{/if}}
+        <td class="name">
+            <b>{{localize item.system.label}}</b>
+        </td>
+        <td>
+            {{localize item.system.quality}}
+        </td>
+        <td>
+            {{item.system.hands}}
+        </td>
+        <td>
+            {{sign item.system.initiativeModifier}}
+        </td>
+        <td>
+            {{#if (or (eq system.group "fireArms") (eq system.group "rangedWeapons"))}}
+            {{item.system.projectilesPerTurn}}
+            {{else}}
+            {{item.system.weaponsActions}}
+            {{/if}}
+        </td>
+        <td>
+            {{#if (gt item.system.misfire 0)}}
+            <a class="misfire-roll button" data-weapon-label='{{item.system.label}}' data-weapon-img='{{item.img}}'
+                title='{{localize "roll"}}!'>
+                {{item.system.misfire}}
+            </a>
+            {{else}}
+            {{toDash item.system.misfire}}
+            {{/if}}
+        </td>
+        <td>
+            {{sign item.system.objectModifier}}
+        </td>
+        <td>
+            {{toDash item.system.breakingPoint}}
+        </td>
+        <td>
+            <a class="damage-roll button" data-weapon-label='{{item.system.label}}' data-weapon-img='{{item.img}}'
+                data-damage-formula='{{item.system.damage}}' data-open-roll-value='{{item.system.openRollValue}}'
+                title='{{localize "roll"}}!'>
+                {{localize item.system.damage}} {{#if (gt item.system.openRollValue
+                0)}}({{localize
+                "OR"}} {{item.system.openRollValue}}) {{/if}}
+            </a>
+
+        </td>
+        <td>
+            {{#if (or (eq system.group "fireArms") (eq system.group "rangedWeapons"))}}
+            {{item.system.minimumRange}} &lt; {{item.system.shortRange}}
+            {{else}}
+            {{toDash 0}}
+            {{/if}}
+        </td>
+        <td>
+            {{#if (or (eq system.group "fireArms") (eq system.group "rangedWeapons"))}}
+            {{item.system.shortRange}} &lt; {{item.system.longRange }}
+            {{else}}
+            {{toDash 0}}
+            {{/if}}
+        </td>
+        <td>
+            {{weight item.system.weight}}
+        </td>
+    </tr>
+    {{/each}}
+</table>
