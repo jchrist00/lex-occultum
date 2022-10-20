@@ -40,6 +40,6 @@
   "initiative": "1d10",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "sanity",
-  "manifest": "https://raw.githubusercontent.com/foundryvtt/worldbuilding/master/system.json",
-  "download": "https://github.com/foundryvtt/worldbuilding/archive/refs/tags/release-071.zip"
+  "manifest": "https://raw.githubusercontent.com/jchrist00/lex-occultum/main/system.json",
+  "download": "https://github.com/jchrist00/lex-occultum/archive/refs/tags/release-10.288.zip"
 }

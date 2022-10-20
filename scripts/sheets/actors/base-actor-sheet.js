@@ -45,13 +45,37 @@ export default class BaseActorSheet extends ActorSheet {
         //     const money = this.actor.system.registry.money;
         //     const marks = money % 100;
         //     const ducats = (money - marks) / 100;
-    
+
         //     await this.actor.update({
         //         "system.registry.money.ducats": {},
         //         "system.registry.money.ducats": ducats,
         //         "system.registry.money.marks": marks
         //     })
         // }
+
+        const systemName = game.system.id;
+        const objectList = await (await fetch(`./systems/${systemName}/lang/it.json`)).json();
+        for (let [key, value] of Object.entries(objectList)) {
+
+            const objectKey = key;
+            let objectValue = "";
+            let firstLetter = true; 
+            for (let char of Object.values(objectKey)) {
+                if(firstLetter)
+                {
+                    char = char.toLocaleUpperCase();
+                    firstLetter = !firstLetter;
+                }
+                else
+                {
+                    char = (char == char.toLocaleUpperCase() ? " " + char.toUpperCase() : char);
+                }
+                objectValue += char;
+            }
+            objectList[key] = objectValue;
+        }
+
+        
 
         const data = super.getData();
         let sheetData = {
