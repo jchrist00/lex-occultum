@@ -315,6 +315,7 @@ export default class ShopDialog extends Application {
                         });
                         // add the item to the actor
                         // shopItem.system.quality = itemQuality;
+                        shopItem.system.shopPurchased = true;
                         await actor.createEmbeddedDocuments("Item", [shopItem]);
                         // game message
                         const actorName = actor.name;

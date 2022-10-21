@@ -12,6 +12,7 @@ body {
 .combat-sidebar li.combatant .roll:hover {
   background-image: url(../ASSET/images/d10-white-highlight.png);
 }
+.item-sheet.edit-mode .edit,
 .actor-sheet.editable.edit-mode .edit {
   pointer-events: all;
   display: inline-block;
@@ -21,9 +22,11 @@ body {
   padding: 3px;
   text-align: center;
 }
+.item-sheet.edit-mode .edit i,
 .actor-sheet.editable.edit-mode .edit i {
   display: inline;
 }
+.item-sheet.edit-mode .edit-always,
 .actor-sheet.editable.edit-mode .edit-always {
   pointer-events: all;
   display: inline-block;

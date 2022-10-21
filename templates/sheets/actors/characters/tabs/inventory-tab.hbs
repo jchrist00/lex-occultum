@@ -1,7 +1,11 @@
 <table class="inventory-area">
     <tr>
-        <th class="title" colspan="6">
+        <th class="title" colspan="5">
             {{localize "weapons"}}
+        </th>
+        <th>
+            <a class="item-control item-create" title='{{localize "new"}} {{localize "weapon"}}'><i class="fas fa-plus-circle"
+                    data-item-type="Weapon"></i></a>
         </th>
     </tr>
     <tr class="sub-headers">
@@ -42,8 +46,10 @@
                     data-item-id='{{item.id}}'></i></a>
             <a class="item-control item-delete" title='{{localize "delete"}}'><i class="fas fa-trash"
                     data-item-id='{{item.id}}'></i></a>
+            {{#if item.system.shopPurchased}}
             <a class="item-control item-refund" title='{{localize "refund"}}'><i class="fas fa-undo"
                     data-item-id='{{item.id}}'></i></a>
+            {{/if}}
         </td>
     </tr>
     {{/each}}
@@ -92,8 +98,10 @@
                     data-item-id='{{item.id}}'></i></a>
             <a class="item-control item-delete" title='{{localize "delete"}}'><i class="fas fa-trash"
                     data-item-id='{{item.id}}'></i></a>
+            {{#if item.system.shopPurchased}}
             <a class="item-control item-refund" title='{{localize "refund"}}'><i class="fas fa-undo"
                     data-item-id='{{item.id}}'></i></a>
+            {{/if}}
         </td>
     </tr>
     {{/each}}
@@ -142,8 +150,10 @@
                     data-item-id='{{item.id}}'></i></a>
             <a class="item-control item-delete" title='{{localize "delete"}}'><i class="fas fa-trash"
                     data-item-id='{{item.id}}'></i></a>
+            {{#if item.system.shopPurchased}}
             <a class="item-control item-refund" title='{{localize "refund"}}'><i class="fas fa-undo"
                     data-item-id='{{item.id}}'></i></a>
+            {{/if}}
         </td>
     </tr>
     {{/each}}
@@ -222,8 +232,10 @@
                     data-item-id='{{item.id}}'></i></a>
             <a class="item-control item-delete" title='{{localize "delete"}}'><i class="fas fa-trash"
                     data-item-id='{{item.id}}'></i></a>
+            {{#if item.system.shopPurchased}}
             <a class="item-control item-refund" title='{{localize "refund"}}'><i class="fas fa-undo"
                     data-item-id='{{item.id}}'></i></a>
+            {{/if}}
         </td>
     </tr>
     {{/each}}

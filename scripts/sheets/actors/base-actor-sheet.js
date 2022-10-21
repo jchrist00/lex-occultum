@@ -39,44 +39,6 @@ export default class BaseActorSheet extends ActorSheet {
     }
 
     async getData() {
-        // update money system from money to money(ducats,marks)
-        // if(this.actor.system.registry.money > 0)
-        // {
-        //     const money = this.actor.system.registry.money;
-        //     const marks = money % 100;
-        //     const ducats = (money - marks) / 100;
-
-        //     await this.actor.update({
-        //         "system.registry.money.ducats": {},
-        //         "system.registry.money.ducats": ducats,
-        //         "system.registry.money.marks": marks
-        //     })
-        // }
-
-        const systemName = game.system.id;
-        const objectList = await (await fetch(`./systems/${systemName}/lang/it.json`)).json();
-        for (let [key, value] of Object.entries(objectList)) {
-
-            const objectKey = key;
-            let objectValue = "";
-            let firstLetter = true; 
-            for (let char of Object.values(objectKey)) {
-                if(firstLetter)
-                {
-                    char = char.toLocaleUpperCase();
-                    firstLetter = !firstLetter;
-                }
-                else
-                {
-                    char = (char == char.toLocaleUpperCase() ? " " + char.toUpperCase() : char);
-                }
-                objectValue += char;
-            }
-            objectList[key] = objectValue;
-        }
-
-        
-
         const data = super.getData();
         let sheetData = {
             userIsGM: game.user.isGM,
@@ -146,6 +108,9 @@ export default class BaseActorSheet extends ActorSheet {
         // ITEMS
         html.find('.item-equip').click(ev => {
             this.onItemEquip(ev);
+        });
+        html.find('.item-create').click(ev => {
+            this.onItemCreate(ev);
         });
         html.find('.item-edit').click(ev => {
             this.onItemUpdate(ev);
@@ -503,6 +468,19 @@ export default class BaseActorSheet extends ActorSheet {
         await item.update({
             "system.equipped": !item.system.equipped
         });
+    }
+    // onItemCreate
+    onItemCreate(event) {
+        event.preventDefault();
+        const itemType = event.target.dataset["itemType"];
+
+        let data = {
+            name: `${game.i18n.localize("new")} ${itemType}`,
+            type: itemType
+        };
+        this.actor.createEmbeddedDocuments("Item", [data]);
+
+        // return item.sheet.render(true);
     }
     // onItemUpdate
     onItemUpdate(event) {
