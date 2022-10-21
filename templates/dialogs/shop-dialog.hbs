@@ -3,6 +3,8 @@
         {{localize header}}
     </div>
     <br>
+    <div style="text-align: center; color: red; font-weight: bold; font-style: italic;">{{localize "shopContentsAlert"}}</div>
+    <br>
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="tab-label" data-tab="pag1">
@@ -32,7 +34,8 @@
     <section class="sheet-body">
         {{!-- Pag1 Tab --}}
         <div class="tab" data-group="primary" data-tab="pag1">
-            {{> systems/lex-occultum/templates/dialogs/tabs/shop-apparels-tab.hbs apparels=shop.apparels group = "man" }}
+            {{> systems/lex-occultum/templates/dialogs/tabs/shop-apparels-tab.hbs apparels=shop.apparels group = "man"
+            }}
         </div>
         {{!-- Pag2 Tab --}}
         <div class="tab" data-group="primary" data-tab="pag2">
@@ -40,19 +43,23 @@
         </div>
         {{!-- Pag3 Tab --}}
         <div class="tab" data-group="primary" data-tab="pag3">
-            {{> systems/lex-occultum/templates/dialogs/tabs/shop-weapons-tab.hbs weapons = shop.fireArms weaponsGroup = "fireArms" }}
+            {{> systems/lex-occultum/templates/dialogs/tabs/shop-weapons-tab.hbs weapons = shop.fireArms weaponsGroup =
+            "fireArms" }}
         </div>
         {{!-- Pag4 Tab --}}
         <div class="tab" data-group="primary" data-tab="pag4">
-            {{> systems/lex-occultum/templates/dialogs/tabs/shop-weapons-tab.hbs weapons = shop.rangedWeapons weaponsGroup = "rangedWeapons"  }}
+            {{> systems/lex-occultum/templates/dialogs/tabs/shop-weapons-tab.hbs weapons = shop.rangedWeapons
+            weaponsGroup = "rangedWeapons" }}
         </div>
         {{!-- Pag5 Tab --}}
         <div class="tab" data-group="primary" data-tab="pag5">
-            {{> systems/lex-occultum/templates/dialogs/tabs/shop-weapons-tab.hbs weapons = shop.lightMeleeWeapons weaponsGroup = "lightMeleeWeapons" }}
+            {{> systems/lex-occultum/templates/dialogs/tabs/shop-weapons-tab.hbs weapons = shop.lightMeleeWeapons
+            weaponsGroup = "lightMeleeWeapons" }}
         </div>
         {{!-- Pag6 Tab --}}
         <div class="tab" data-group="primary" data-tab="pag6">
-            {{> systems/lex-occultum/templates/dialogs/tabs/shop-weapons-tab.hbs weapons = shop.heavyMeleeWeapons weaponsGroup = "heavyMeleeWeapons" }}
+            {{> systems/lex-occultum/templates/dialogs/tabs/shop-weapons-tab.hbs weapons = shop.heavyMeleeWeapons
+            weaponsGroup = "heavyMeleeWeapons" }}
         </div>
         {{!-- Pag7 Tab --}}
         <div class="tab" data-group="primary" data-tab="pag7">

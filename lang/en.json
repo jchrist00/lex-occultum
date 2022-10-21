@@ -454,6 +454,7 @@
     "shirt": "Shirt",
     "shoes": "Shoes",
     "shop": "Shop",
+    "shopContentsAlert": "ATTENTION: ONLY the objects present in the Compendium are displayed in the Shop",
     "shortBow": "Short Bow",
     "shortRange": "Short Range",
     "shortSpear": "Short Spear",

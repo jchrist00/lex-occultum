@@ -5,7 +5,8 @@ export default class CustomItem extends Item {
         super.prepareData();
 
         const itemData = this.system;
-        const itemDataData = itemData.system;
+        // const itemDataData = itemData.system;
+        this.system.label = this.system.label || this.name;
 
     }
 
