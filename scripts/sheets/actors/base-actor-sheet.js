@@ -11,6 +11,7 @@ export default class BaseActorSheet extends ActorSheet {
             // ],
             width: "auto",
             height: "auto",
+            top: 0,
             resizable: true,
             tabs: [
                 {
