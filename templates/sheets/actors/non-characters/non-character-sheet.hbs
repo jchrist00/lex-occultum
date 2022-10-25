@@ -1,4 +1,4 @@
-<form class='actor-sheet {{cssClass}} editable' autocomplete="off">
+<form class='actor-sheet editable {{cssClass}}' autocomplete="off">
     {{#if userIsGM}}
     <div style="text-align: center; font-size:22px;">
         <a class="toggle-edit-mode">
@@ -24,7 +24,7 @@
                 <td rowspan="2">
                     <div style="white-space: nowrap;">
                         <div class="health">
-                            <a class="property-edit edit-always"
+                            <a class="property-edit edit edit-always"
                                 data-parameters='system.health.damage;{{system.health.damage}};-{{system.health.max}};0;1'
                                 title='{{localize "editValue1"}}'>{{system.health.value}} /
                                 {{system.health.max}}</a>
@@ -45,7 +45,7 @@
                 </td>
                 <td rowspan="2">
                     <div class="health">
-                        <a class="property-edit edit-always"
+                        <a class="property-edit edit edit-always"
                             data-parameters='system.sanity.damage;{{system.sanity.damage}};-{{system.sanity.max}};0;1'
                             title='{{localize "editValue1"}}'>{{system.sanity.value}} / {{system.sanity.max}}</a>
                     </div>
@@ -65,10 +65,10 @@
             </tr>
             <tr>
                 <td>
-                    {{#if (and userIsGM system.editMode)}}
-                    <a class="property-edit edit"
+                    {{#if userIsGM}}
+                    <a class="property-edit edit edit-always"
                         data-parameters='system.registry.money.ducats;{{system.registry.money.ducats}};0;999999999;1'
-                        title='{{localize "editValue1"}}'>{{system.registry.money.ducats}}</a>,<a class="property-edit edit"
+                        title='{{localize "editValue1"}}'>{{system.registry.money.ducats}}</a>,<a class="property-edit edit edit-always"
                         data-parameters='system.registry.money.marks;{{system.registry.money.marks}};0;99;1'
                         title='{{localize "editValue1"}}'>{{marks system.registry.money.marks}}</a>
                     {{else}}

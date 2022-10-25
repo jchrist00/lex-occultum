@@ -1,4 +1,11 @@
-<form class='item-sheet {{cssClass}} edit-mode' autocomplete="off">
+<form class='item-sheet {{cssClass}}' autocomplete="off">
+    <div style="text-align: center; font-size:14px;">
+        <a class="toggle-edit-mode">
+            {{localize "sheetEditMode"}}: {{#if system.editMode }}<i class="fas fa-unlock"
+                title='{{localize "editable"}}'></i>{{else}}<i class="fas fa-lock"
+                title='{{localize "notEditable"}}'></i>{{/if}}
+        </a>
+    </div>
     <header class="sheet-header">
         <img src='{{item.img}}' data-edit="img" title='{{item.name}}' height="64" width="64" />
         <h1><input name="name" type="text" value='{{item.name}}' placeholder="{{localize " name"}}" /></h1>

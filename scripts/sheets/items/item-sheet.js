@@ -13,13 +13,14 @@ export default class CustomItemSheet extends ItemSheet {
 
     getData() {
 
-        const baseData = super.getData();
+        const data = super.getData();
         let sheetData = {
             userIsGM: game.user.isGM,
             owner: this.item.isOwner,
             editable: this.isEditable,
-            item: baseData.item,
-            system: baseData.item.system
+            cssClass: (data.item.system.editMode ? "edit-mode" : ""),
+            item: data.item,
+            system: data.item.system
         };
 
 
@@ -32,10 +33,17 @@ export default class CustomItemSheet extends ItemSheet {
     // activateListeners
     activateListeners(html) {
         super.activateListeners(html);
+        // EDIT MODE
+        html.find('.toggle-edit-mode').mouseup(ev => this.onToggleEditMode(ev));
         // PROPERTIES
         html.find('.property-edit').mouseup(ev => this.onItemPropertyEdit(ev));
         html.find('.property-edit').bind('mousewheel', ev => this.onItemPropertyEdit(ev, true));
         html.find('.property-choices-edit').mouseup(ev => this.onItemPropertyChoicesEdit(ev));
+    }
+    //onToggleEditMode
+    async onToggleEditMode() {
+        const itemEditMode = this.item.system.editMode;
+        await this.item.update({ "system.editMode": !itemEditMode });
     }
     // onItemPropertyEdit
     async onItemPropertyEdit(event, withWheel = false) {

@@ -12,522 +12,6 @@ body {
 .combat-sidebar li.combatant .roll:hover {
   background-image: url(../ASSET/images/d10-white-highlight.png);
 }
-.item-sheet.edit-mode .edit,
-.actor-sheet.editable.edit-mode .edit {
-  pointer-events: all;
-  display: inline-block;
-  min-width: 20px;
-  background-color: #e2ca44;
-  color: black;
-  padding: 3px;
-  text-align: center;
-}
-.item-sheet.edit-mode .edit i,
-.actor-sheet.editable.edit-mode .edit i {
-  display: inline;
-}
-.item-sheet.edit-mode .edit-always,
-.actor-sheet.editable.edit-mode .edit-always {
-  pointer-events: all;
-  display: inline-block;
-  min-width: 20px;
-  background-color: #e2ca44;
-  color: black;
-}
-.actor-sheet {
-  /* Sheet Tabs */
-}
-.actor-sheet .edit {
-  pointer-events: none;
-}
-.actor-sheet .edit i {
-  display: none;
-}
-.actor-sheet .sheet-tabs.tabs {
-  border-top: none;
-  border-bottom: 2px solid black;
-  padding-bottom: 0;
-}
-.actor-sheet .tabs {
-  flex: 0 0 40px;
-  border-top: 1px solid #aaa;
-  border-bottom: 2px solid #aaa;
-}
-.actor-sheet .tabs .tab-label {
-  font-weight: bold;
-  font-size: 20px;
-  background-color: transparent;
-  text-shadow: none;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border: 2px solid black;
-  border-bottom: none;
-  min-width: 150px;
-  text-align: center;
-}
-.actor-sheet .tabs .tab-label.active {
-  background-color: black;
-  color: whitesmoke;
-  text-shadow: none;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-.actor-sheet .sheet-body {
-  overflow: hidden;
-}
-.actor-sheet .sheet-body .tab {
-  height: 100%;
-  overflow-y: auto;
-}
-a.button {
-  display: block;
-  background: #a7a7a7;
-  color: black;
-  padding: 2px;
-  text-align: center;
-  border-radius: 3px;
-  font-weight: bold;
-  border: 1px solid #414141;
-  min-width: 26px;
-  white-space: nowrap;
-}
-a.button-circle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bolder;
-  width: 28px;
-  height: 28px;
-  margin: auto;
-  border-radius: 50%;
-  padding: 1px;
-  background-color: #c5c5c5;
-  color: #1f1f1f;
-  font-weight: bold;
-  border: 2px solid #1f1f1f;
-  white-space: nowrap;
-}
-a.button-circle:hover {
-  background-color: #1f1f1f;
-  color: whitesmoke;
-}
-.shop {
-  /* Sheet Tabs */
-}
-.shop .sheet-tabs.tabs {
-  border-top: none;
-  border-bottom: 2px solid black;
-}
-.shop .tabs {
-  flex: 0 0 40px;
-}
-.shop .tabs .tab-label {
-  background-color: transparent;
-  text-shadow: none;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border: 2px solid black;
-  border-bottom: none;
-}
-.shop .tabs .tab-label.active {
-  font-weight: bold;
-  background-color: black;
-  color: whitesmoke;
-}
-.editor,
-.editor-content {
-  min-height: 600px;
-  height: 100%;
-}
-#hoverbox {
-  font-weight: normal;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  line-height: normal;
-  border: 2px solid black;
-  color: whitesmoke;
-  border-radius: 10px;
-  background: black;
-  opacity: 0.8;
-  height: auto;
-  width: auto;
-  min-width: 150px;
-  max-width: 300px;
-  position: fixed;
-  text-align: left;
-  padding: 3px;
-  z-index: 999;
-  white-space: initial;
-}
-.lexoccultum .sheet-header .profile-img {
-  flex: 0 0 100px;
-  width: 150px;
-  height: 150px;
-  margin-right: 10px;
-}
-.tab-label {
-  font-weight: bolder;
-}
-div.title {
-  background-color: #414141;
-  color: whitesmoke;
-  text-align: center;
-  font-weight: bolder;
-  font-style: italic;
-  font-size: 18px;
-  white-space: nowrap;
-  pointer-events: none;
-  padding: 3px;
-}
-.middle-lined {
-  width: 100%;
-  text-align: center;
-  border-bottom: 3px solid #000;
-  line-height: 0.1em;
-  margin: 5px 0 0;
-}
-.middle-lined i {
-  background: black;
-  color: whitesmoke;
-  padding: 5px;
-  border-radius: 15px;
-}
-.choices-area th {
-  padding: 5px;
-  border: 1px solid #a5a5a5;
-}
-.choices-area td {
-  padding-left: 10px;
-  padding-right: 10px;
-  white-space: normal;
-  max-width: 480px;
-  border: 1px solid #a5a5a5;
-}
-.choices-area td.selection {
-  text-align: center;
-}
-.choices-area td.number-value {
-  white-space: nowrap;
-  text-align: center;
-  font-size: 20px;
-  font-weight: bolder;
-}
-.choices-area td.buttons {
-  text-align: center;
-}
-.choices-area td.buttons button {
-  background-color: black;
-  color: white;
-  width: 220px;
-  border-radius: 5px;
-}
-.item-area {
-  width: 100%;
-}
-.item-area th {
-  text-align: right;
-  padding-right: 5px;
-  border-right: 1px solid black;
-}
-.item-area td {
-  text-align: center;
-  border-left: 1px solid black;
-}
-.registry-area {
-  width: 100%;
-}
-.registry-area th {
-  text-align: center;
-  font-size: 11px;
-  vertical-align: top;
-}
-.registry-area td {
-  border: 1px solid black;
-  text-align: center;
-  white-space: nowrap;
-  padding-left: 2px;
-  padding-right: 2px;
-}
-.registry-area td div.health,
-.registry-area td div.sanity {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bolder;
-  font-size: 36px;
-  margin: auto;
-}
-.traits-area {
-  width: 100%;
-}
-.traits-area th {
-  text-align: center;
-  vertical-align: top;
-}
-.traits-area td {
-  text-align: center;
-  vertical-align: top;
-  width: 130px;
-  max-width: 130px;
-}
-.traits-area td .trait-modifier {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bolder;
-  font-size: 30px;
-  width: 50px;
-  height: 50px;
-  margin: auto;
-  border-radius: 50%;
-  border: 3px solid black;
-}
-.spheres-area {
-  width: 100%;
-}
-.spheres-area th {
-  text-align: center;
-  vertical-align: top;
-}
-.spheres-area td {
-  text-align: center;
-  vertical-align: top;
-  width: 130px;
-  max-width: 140px;
-  border: 1px solid black;
-}
-.spheres-area td .sphere-level {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bolder;
-  font-size: 26px;
-  width: 40px;
-  height: 40px;
-  margin: auto;
-  border-radius: 50%;
-  border: 3px solid black;
-}
-.skills-area {
-  width: 100%;
-}
-.skills-area td {
-  vertical-align: top;
-  padding: 2px;
-}
-.skills-area .skill-area td {
-  padding-top: 1px;
-  padding-bottom: 1px;
-}
-.skills-area .skill-area th.ability-label {
-  text-align: left;
-  font-weight: bold;
-  font-style: italic;
-  white-space: nowrap;
-  border-left: 1px solid #a5a5a5;
-}
-.skills-area .skill-area th.ability-label i {
-  visibility: hidden;
-}
-.skills-area .skill-area th.ability-label:hover i {
-  visibility: visible;
-}
-.skills-area .skill-area tr.skill-row {
-  background-color: #414141;
-  border-bottom: 2px solid black;
-  color: whitesmoke;
-}
-.skills-area .skill-area th.skill-label {
-  padding-left: 5px;
-  font-size: 16px;
-}
-.skills-area .skill-area tr.discipline-row {
-  background-color: #a7a7a7;
-}
-.skills-area .skill-area th.discipline-label {
-  padding-left: 6px;
-  font-size: 14px;
-}
-.skills-area .skill-area tr.speciality-row {
-  background-color: transparent;
-  border-bottom: 1px solid #a5a5a5;
-}
-.skills-area .skill-area th.speciality-label {
-  padding-left: 7px;
-  font-size: 12px;
-}
-.skills-area .skill-area td.value {
-  white-space: nowrap;
-  padding-left: 3px;
-  padding-right: 3px;
-}
-.inventory-area {
-  width: 99%;
-}
-.inventory-area .item-equip {
-  color: #a78686;
-}
-.inventory-area .item-equip.active {
-  color: #363636;
-}
-.inventory-area th.title {
-  background-color: #414141;
-  color: whitesmoke;
-  font-size: 16px;
-  pointer-events: none;
-}
-.inventory-area th.actions {
-  width: 60px;
-  max-width: 60px;
-  min-width: 60px;
-}
-.inventory-area tr:hover {
-  background-color: #7a7a7a;
-  color: whitesmoke;
-  opacity: 0.8;
-}
-.inventory-area tr.sub-headers th {
-  background-color: #a7a7a7;
-  color: black;
-  font-size: 12px;
-  border: 1px solid #a5a5a5;
-  padding-left: 2px;
-  padding-right: 2px;
-  pointer-events: none;
-}
-.inventory-area td {
-  border: 1px solid #a5a5a5;
-  vertical-align: top;
-  text-align: center;
-}
-.inventory-area td.image {
-  margin: 0px;
-  padding: 0px 0px 0px 0px;
-  width: 25px;
-  max-width: 30px;
-}
-.inventory-area td.label {
-  text-align: left;
-  width: 40%;
-  max-width: 60%;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-.combat-area {
-  width: 100%;
-}
-.combat-stats-area {
-  width: 100%;
-}
-.combat-stats-area th {
-  text-align: center;
-  vertical-align: top;
-}
-.combat-stats-area td {
-  text-align: center;
-  vertical-align: top;
-  width: 130px;
-  max-width: 140px;
-  border: 1px solid black;
-}
-.combat-stats-area td .combat-points {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bolder;
-  font-size: 25px;
-  width: 50px;
-  height: 50px;
-  margin: auto;
-  border-radius: 50%;
-  border: 3px solid black;
-}
-.weapons-area .hand-use {
-  color: #a18585;
-}
-.weapons-area .hand-use.active {
-  color: #363636;
-}
-.weapons-area tr.sub-headers th {
-  background-color: #a7a7a7;
-  font-size: 12px;
-  border: 1px solid #a5a5a5;
-  padding-left: 2px;
-  padding-right: 2px;
-  pointer-events: none;
-}
-.weapons-area tr:hover {
-  background-color: #7a7a7a;
-  color: whitesmoke;
-  opacity: 0.8;
-}
-.weapons-area th {
-  border: 1px solid #a5a5a5;
-}
-.weapons-area td.name {
-  text-align: left;
-}
-.weapons-area td {
-  text-align: center;
-  border: 1px solid #a5a5a5;
-  padding-left: 2px;
-  padding-right: 2px;
-}
-.task-area {
-  width: 98%;
-  min-width: 220px;
-  border-collapse: collapse;
-  border-style: hidden;
-  font-size: 13px;
-}
-.task-area tr {
-  height: 25px;
-}
-.task-area th {
-  background-color: black;
-  color: whitesmoke;
-  white-space: nowrap;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-radius: 5px;
-}
-.task-area td {
-  text-align: center;
-  border: 1px solid black;
-}
-.task-area td.task-total {
-  border-top: none;
-  border-bottom: none;
-}
-.task-area div.total {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bolder;
-  font-size: 52px;
-  width: 80px;
-  height: 80px;
-  margin: auto;
-  border-radius: 50%;
-  border: 5px solid #303030;
-}
-.task-area .task-field-bold {
-  text-align: left;
-  font-weight: bold;
-  white-space: nowrap;
-  padding: 0px 15px 0px 5px;
-}
-.task-area .task-field-bold .modifier-text {
-  font-size: 11px;
-  font-style: italic;
-  font-weight: normal;
-}
 .chat-area .result .header {
   background-color: #000000;
   color: whitesmoke;
@@ -665,16 +149,452 @@ div.title {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, 0);
 }
-.shop-area {
-  font-size: 13px;
+.lexoccultum .item-sheet.edit-mode .edit,
+.lexoccultum .actor-sheet.editable.edit-mode .edit {
+  pointer-events: all;
+  display: inline-block;
+  min-width: 20px;
+  text-shadow: 2px 0 #e2ca44, -2px 0 #e2ca44, 0 2px #e2ca44, 0 -2px #e2ca44, 1px 1px #e2ca44, -1px -1px #e2ca44, 1px -1px #e2ca44, -1px 1px #e2ca44;
+  color: black;
+  padding: 3px;
+  border-radius: 5px;
+  text-align: center;
 }
-.shop-area th.title {
+.lexoccultum .item-sheet.edit-mode .edit i,
+.lexoccultum .actor-sheet.editable.edit-mode .edit i {
+  display: inline;
+}
+.lexoccultum .item-sheet.edit-mode .edit-always,
+.lexoccultum .actor-sheet.editable .edit-always {
+  pointer-events: all;
+  display: inline-block;
+  min-width: 20px;
+  text-shadow: 0 0 10px #e2ca44;
+  text-shadow: 2px 0 #e2ca44, -2px 0 #e2ca44, 0 2px #e2ca44, 0 -2px #e2ca44, 1px 1px #e2ca44, -1px -1px #e2ca44, 1px -1px #e2ca44, -1px 1px #e2ca44;
+  color: black;
+  padding: 3px;
+}
+.lexoccultum .actor-sheet {
+  /* Sheet Tabs */
+}
+.lexoccultum .actor-sheet .edit {
+  pointer-events: none;
+}
+.lexoccultum .actor-sheet .edit i {
+  display: none;
+}
+.lexoccultum .actor-sheet .sheet-tabs.tabs {
+  border-top: none;
+  border-bottom: 2px solid black;
+  padding-bottom: 0;
+}
+.lexoccultum .actor-sheet .tabs {
+  flex: 0 0 40px;
+  border-top: 1px solid #aaa;
+  border-bottom: 2px solid #aaa;
+}
+.lexoccultum .actor-sheet .tabs .tab-label {
+  font-weight: bold;
+  font-size: 20px;
+  background-color: transparent;
+  text-shadow: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 2px solid black;
+  border-bottom: none;
+  min-width: 150px;
+  text-align: center;
+}
+.lexoccultum .actor-sheet .tabs .tab-label.active {
+  background-color: black;
+  color: whitesmoke;
+  text-shadow: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.lexoccultum .actor-sheet .sheet-body {
+  overflow: hidden;
+}
+.lexoccultum .actor-sheet .sheet-body .tab {
+  height: 100%;
+  overflow-y: auto;
+}
+.lexoccultum a.button {
+  display: block;
+  background: #a7a7a7;
+  color: black;
+  padding: 2px;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: bold;
+  border: 1px solid #414141;
+  min-width: 26px;
+  white-space: nowrap;
+}
+.lexoccultum a.button-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  width: 28px;
+  height: 28px;
+  margin: auto;
+  border-radius: 50%;
+  padding: 1px;
+  background-color: #c5c5c5;
+  color: #1f1f1f;
+  font-weight: bold;
+  border: 2px solid #1f1f1f;
+  white-space: nowrap;
+}
+.lexoccultum a.button-circle:hover {
+  background-color: #1f1f1f;
+  color: whitesmoke;
+}
+.lexoccultum .shop {
+  /* Sheet Tabs */
+}
+.lexoccultum .shop .sheet-tabs.tabs {
+  border-top: none;
+  border-bottom: 2px solid black;
+}
+.lexoccultum .shop .tabs {
+  flex: 0 0 40px;
+}
+.lexoccultum .shop .tabs .tab-label {
+  background-color: transparent;
+  text-shadow: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 2px solid black;
+  border-bottom: none;
+}
+.lexoccultum .shop .tabs .tab-label.active {
+  font-weight: bold;
+  background-color: black;
+  color: whitesmoke;
+}
+.lexoccultum .editor,
+.lexoccultum .editor-content {
+  min-height: 600px;
+  height: 100%;
+}
+.lexoccultum #hoverbox {
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: normal;
+  border: 2px solid black;
+  color: whitesmoke;
+  border-radius: 10px;
+  background: black;
+  opacity: 0.8;
+  height: auto;
+  width: auto;
+  min-width: 150px;
+  max-width: 300px;
+  position: fixed;
+  text-align: left;
+  padding: 3px;
+  z-index: 999;
+  white-space: initial;
+}
+.lexoccultum .sheet-header .profile-img {
+  flex: 0 0 100px;
+  width: 150px;
+  height: 150px;
+  margin-right: 10px;
+}
+.lexoccultum .tab-label {
+  font-weight: bolder;
+}
+.lexoccultum div.title {
+  background-color: #414141;
+  color: whitesmoke;
+  text-align: center;
+  font-weight: bolder;
+  font-style: italic;
+  font-size: 18px;
+  white-space: nowrap;
+  pointer-events: none;
+  padding: 3px;
+}
+.lexoccultum .middle-lined {
+  width: 100%;
+  text-align: center;
+  border-bottom: 3px solid #000;
+  line-height: 0.1em;
+  margin: 5px 0 0;
+}
+.lexoccultum .middle-lined i {
+  background: black;
+  color: whitesmoke;
+  padding: 5px;
+  border-radius: 15px;
+}
+.lexoccultum .choices-area th {
+  padding: 5px;
+  border: 1px solid #a5a5a5;
+}
+.lexoccultum .choices-area td {
+  padding-left: 10px;
+  padding-right: 10px;
+  white-space: normal;
+  max-width: 480px;
+  border: 1px solid #a5a5a5;
+}
+.lexoccultum .choices-area td.selection {
+  text-align: center;
+}
+.lexoccultum .choices-area td.number-value {
+  white-space: nowrap;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
+}
+.lexoccultum .choices-area td.buttons {
+  text-align: center;
+}
+.lexoccultum .choices-area td.buttons button {
+  background-color: black;
+  color: white;
+  width: 220px;
+  border-radius: 5px;
+}
+.lexoccultum .item-area {
+  width: 100%;
+}
+.lexoccultum .item-area th {
+  text-align: right;
+  padding-right: 5px;
+  border-right: 1px solid black;
+}
+.lexoccultum .item-area td {
+  text-align: center;
+  border-left: 1px solid black;
+}
+.lexoccultum .registry-area {
+  width: 100%;
+}
+.lexoccultum .registry-area th {
+  text-align: center;
+  font-size: 11px;
+  vertical-align: top;
+}
+.lexoccultum .registry-area td {
+  border: 1px solid black;
+  text-align: center;
+  white-space: nowrap;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.lexoccultum .registry-area td div.health,
+.lexoccultum .registry-area td div.sanity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 36px;
+  margin: auto;
+}
+.lexoccultum .traits-area {
+  width: 100%;
+}
+.lexoccultum .traits-area th {
+  text-align: center;
+  vertical-align: top;
+}
+.lexoccultum .traits-area td {
+  text-align: center;
+  vertical-align: top;
+  width: 130px;
+  max-width: 130px;
+}
+.lexoccultum .traits-area td .trait-modifier {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+.lexoccultum .spheres-area {
+  width: 100%;
+}
+.lexoccultum .spheres-area th {
+  text-align: center;
+  vertical-align: top;
+}
+.lexoccultum .spheres-area td {
+  text-align: center;
+  vertical-align: top;
+  width: 130px;
+  max-width: 140px;
+  border: 1px solid black;
+}
+.lexoccultum .spheres-area td .sphere-level {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 26px;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+.lexoccultum .skills-area {
+  width: 100%;
+}
+.lexoccultum .skills-area td {
+  vertical-align: top;
+  padding: 2px;
+}
+.lexoccultum .skills-area .skill-area td {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+.lexoccultum .skills-area .skill-area th.ability-label {
+  text-align: left;
+  font-weight: bold;
+  font-style: italic;
+  white-space: nowrap;
+  border-left: 1px solid #a5a5a5;
+}
+.lexoccultum .skills-area .skill-area th.ability-label i {
+  visibility: hidden;
+}
+.lexoccultum .skills-area .skill-area th.ability-label:hover i {
+  visibility: visible;
+}
+.lexoccultum .skills-area .skill-area tr.skill-row {
+  background-color: #414141;
+  border-bottom: 2px solid black;
+  color: whitesmoke;
+}
+.lexoccultum .skills-area .skill-area th.skill-label {
+  padding-left: 5px;
+  font-size: 16px;
+}
+.lexoccultum .skills-area .skill-area tr.discipline-row {
+  background-color: #a7a7a7;
+}
+.lexoccultum .skills-area .skill-area th.discipline-label {
+  padding-left: 6px;
+  font-size: 14px;
+}
+.lexoccultum .skills-area .skill-area tr.speciality-row {
+  background-color: transparent;
+  border-bottom: 1px solid #a5a5a5;
+}
+.lexoccultum .skills-area .skill-area th.speciality-label {
+  padding-left: 7px;
+  font-size: 12px;
+}
+.lexoccultum .skills-area .skill-area td.value {
+  white-space: nowrap;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.lexoccultum .inventory-area {
+  width: 99%;
+}
+.lexoccultum .inventory-area .item-equip {
+  color: #a78686;
+}
+.lexoccultum .inventory-area .item-equip.active {
+  color: #363636;
+}
+.lexoccultum .inventory-area th.title {
   background-color: #414141;
   color: whitesmoke;
   font-size: 16px;
   pointer-events: none;
 }
-.shop-area tr.sub-headers th {
+.lexoccultum .inventory-area th.actions {
+  width: 60px;
+  max-width: 60px;
+  min-width: 60px;
+}
+.lexoccultum .inventory-area tr:hover {
+  background-color: #7a7a7a;
+  color: whitesmoke;
+  opacity: 0.8;
+}
+.lexoccultum .inventory-area tr.sub-headers th {
+  background-color: #a7a7a7;
+  color: black;
+  font-size: 12px;
+  border: 1px solid #a5a5a5;
+  padding-left: 2px;
+  padding-right: 2px;
+  pointer-events: none;
+}
+.lexoccultum .inventory-area td {
+  border: 1px solid #a5a5a5;
+  vertical-align: top;
+  text-align: center;
+}
+.lexoccultum .inventory-area td.image {
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+  width: 25px;
+  max-width: 30px;
+}
+.lexoccultum .inventory-area td.label {
+  text-align: left;
+  width: 40%;
+  max-width: 60%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.lexoccultum .combat-area {
+  width: 100%;
+}
+.lexoccultum .combat-stats-area {
+  width: 100%;
+}
+.lexoccultum .combat-stats-area th {
+  text-align: center;
+  vertical-align: top;
+}
+.lexoccultum .combat-stats-area td {
+  text-align: center;
+  vertical-align: top;
+  width: 130px;
+  max-width: 140px;
+  border: 1px solid black;
+}
+.lexoccultum .combat-stats-area td .combat-points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 25px;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+.lexoccultum .weapons-area .hand-use {
+  color: #a18585;
+}
+.lexoccultum .weapons-area .hand-use.active {
+  color: #363636;
+}
+.lexoccultum .weapons-area tr.sub-headers th {
   background-color: #a7a7a7;
   font-size: 12px;
   border: 1px solid #a5a5a5;
@@ -682,49 +602,132 @@ div.title {
   padding-right: 2px;
   pointer-events: none;
 }
-.shop-area tr:hover {
+.lexoccultum .weapons-area tr:hover {
   background-color: #7a7a7a;
   color: whitesmoke;
   opacity: 0.8;
 }
-.shop-area td {
+.lexoccultum .weapons-area th {
+  border: 1px solid #a5a5a5;
+}
+.lexoccultum .weapons-area td.name {
+  text-align: left;
+}
+.lexoccultum .weapons-area td {
+  text-align: center;
+  border: 1px solid #a5a5a5;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.lexoccultum .task-area {
+  width: 98%;
+  min-width: 220px;
+  border-collapse: collapse;
+  border-style: hidden;
+  font-size: 13px;
+}
+.lexoccultum .task-area tr {
+  height: 25px;
+}
+.lexoccultum .task-area th {
+  background-color: black;
+  color: whitesmoke;
+  white-space: nowrap;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+}
+.lexoccultum .task-area td {
+  text-align: center;
+  border: 1px solid black;
+}
+.lexoccultum .task-area td.task-total {
+  border-top: none;
+  border-bottom: none;
+}
+.lexoccultum .task-area div.total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 52px;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  border-radius: 50%;
+  border: 5px solid #303030;
+}
+.lexoccultum .task-area .task-field-bold {
+  text-align: left;
+  font-weight: bold;
+  white-space: nowrap;
+  padding: 0px 15px 0px 5px;
+}
+.lexoccultum .task-area .task-field-bold .modifier-text {
+  font-size: 11px;
+  font-style: italic;
+  font-weight: normal;
+}
+.lexoccultum .shop-area {
+  font-size: 13px;
+}
+.lexoccultum .shop-area th.title {
+  background-color: #414141;
+  color: whitesmoke;
+  font-size: 16px;
+  pointer-events: none;
+}
+.lexoccultum .shop-area tr.sub-headers th {
+  background-color: #a7a7a7;
+  font-size: 12px;
+  border: 1px solid #a5a5a5;
+  padding-left: 2px;
+  padding-right: 2px;
+  pointer-events: none;
+}
+.lexoccultum .shop-area tr:hover {
+  background-color: #7a7a7a;
+  color: whitesmoke;
+  opacity: 0.8;
+}
+.lexoccultum .shop-area td {
   text-align: center;
   white-space: nowrap;
   border: 1px solid #a5a5a5;
   padding-left: 2px;
   padding-right: 2px;
 }
-.shop-area td.label {
+.lexoccultum .shop-area td.label {
   white-space: unset;
 }
-.shop-area th.name {
+.lexoccultum .shop-area th.name {
   text-align: left;
   border: 1px solid #a5a5a5;
   padding-left: 3px;
   padding-right: 4px;
   white-space: nowrap;
 }
-.shop-area-equipments td.column {
+.lexoccultum .shop-area-equipments td.column {
   vertical-align: top;
   padding-left: 3px;
   padding-right: 3px;
   width: 50%;
 }
-.shop-item-quality-choice th {
+.lexoccultum .shop-item-quality-choice th {
   text-align: right;
   padding-left: 3px;
   padding-right: 3px;
   width: 70%;
   max-width: 70%;
 }
-.shop-item-quality-choice td {
+.lexoccultum .shop-item-quality-choice td {
   text-align: center;
   padding-left: 3px;
   padding-right: 3px;
   width: 30%;
   max-width: 30%;
 }
-.shop-item-quality-choice button {
+.lexoccultum .shop-item-quality-choice button {
   background-color: black;
   color: white;
   width: 220px;

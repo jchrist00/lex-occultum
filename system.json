@@ -22,7 +22,7 @@
     {
       "name": "Armors",
       "label": "Armors",
-      "system": "lex-occultum-dna",
+      "system": "lex-occultum",
       "path": "packs/armors.db",
       "type": "Item",
       "private": true
@@ -30,7 +30,7 @@
     {
       "name": "Apparels",
       "label": "Apparels",
-      "system": "lex-occultum-dna",
+      "system": "lex-occultum",
       "path": "packs/apparels.db",
       "type": "Item",
       "private": true
@@ -38,7 +38,7 @@
     {
       "name": "Equipments",
       "label": "Equipments",
-      "system": "lex-occultum-dna",
+      "system": "lex-occultum",
       "path": "packs/equipments.db",
       "type": "Item",
       "private": true
@@ -46,7 +46,7 @@
     {
       "name": "Kits",
       "label": "Kits",
-      "system": "lex-occultum-dna",
+      "system": "lex-occultum",
       "path": "packs/kits.db",
       "type": "Item",
       "private": true
@@ -54,7 +54,7 @@
     {
       "name": "Weapons",
       "label": "Weapons",
-      "system": "lex-occultum-dna",
+      "system": "lex-occultum",
       "path": "packs/weapons.db",
       "type": "Item",
       "private": true
