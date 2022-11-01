@@ -1,6 +1,6 @@
 {
   "id": "lex-occultum",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "title": "Lex Occultum [UNOFFICIAL]",
   "url": "https://gitlab.com/foundrynet/worldbuilding/",
   "description": "Lex Occultum UNOFFICIAL Game System available in English and Italian.",
@@ -74,7 +74,7 @@
   ],
   "compatibility": {
     "minimum": "10",
-    "verified": "10.282",
+    "verified": "10.288",
     "maximum": "10.288"
   },
   "gridDistance": 1,
