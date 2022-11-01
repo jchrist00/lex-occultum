@@ -359,7 +359,7 @@ export default class CustomActor extends Actor {
             const weaponGroup = item.system.group;
             // let twoHands = 0;
             const fightingLabel = "fighting";
-            const closeCombatWeapons = "closeCombatWeapons";
+            // const closeCombatWeapons = "closeCombatWeapons";
             // labels
             const rangedWeaponsLabel = "rangedWeapons";
             const fireArmsLabel = "fireArms";
@@ -375,30 +375,51 @@ export default class CustomActor extends Actor {
             const twoHandsWeaponsLabel = "twoHandsWeapons";
             let description = "";
             const itemCombatPoints = {
-                leftHand: {},
-                rightHand: {},
-                twoHands: {}
+                leftHand: { value: 0, modifiers: {} },
+                rightHand: { value: 0, modifiers: {} },
+                twoHands: { value: 0, modifiers: {} }
             };
             const modifiers = {
                 leftHand: {},
                 rightHand: {},
                 twoHands: {}
             };
+            // actor penalty fot non dominant hand
+            const actorNonDominantHandPenalty = data.combat.stats.nonDominantHand.value;
+            if (actorNonDominantHandPenalty < 0) {
+                const actorDominantHand = data.registry.dominantHand;
+                switch (actorDominantHand) {
+                    case "left":
+                        itemCombatPoints.rightHand.value = actorNonDominantHandPenalty;
+                        // modifiers
+                        itemCombatPoints.rightHand.modifiers.nonDominantHand = actorNonDominantHandPenalty;
+                        break;
+                    case "right":
+                        itemCombatPoints.leftHand.value = actorNonDominantHandPenalty;
+                        // modifiers
+                        itemCombatPoints.leftHand.modifiers.nonDominantHand = actorNonDominantHandPenalty;
+                        break;
+                }
+            }
             // actor combat free points
             const actorFreePoints = (data.combat.stats.freePoints.value || 0);
-            itemCombatPoints.leftHand.value = actorFreePoints;
-            itemCombatPoints.rightHand.value = actorFreePoints;
-            itemCombatPoints.twoHands.value = actorFreePoints;
+            itemCombatPoints.leftHand.value += actorFreePoints;
+            itemCombatPoints.rightHand.value += actorFreePoints;
+            itemCombatPoints.twoHands.value += actorFreePoints;
+            itemCombatPoints.leftHand.modifiers.freePoints = actorFreePoints;
+            itemCombatPoints.rightHand.modifiers.freePoints = actorFreePoints;
+            itemCombatPoints.twoHands.modifiers.freePoints = actorFreePoints;
             // check weapon group
             // firemars or ranged weapons
             if ((weaponGroup == fireArmsLabel) || (weaponGroup == rangedWeaponsLabel)) {
                 const actorRangedWeaponsPoints = (data.combat.stats.rangedWeapons.value || 0);
-                modifiers.leftHand.rangedWeapons = actorRangedWeaponsPoints;
-                modifiers.rightHand.rangedWeapons = actorRangedWeaponsPoints;
-                modifiers.twoHands.rangedWeapons = actorRangedWeaponsPoints;
                 itemCombatPoints.leftHand.value += actorRangedWeaponsPoints;
                 itemCombatPoints.rightHand.value += actorRangedWeaponsPoints;
                 itemCombatPoints.twoHands.value += actorRangedWeaponsPoints;
+                // modifiers
+                itemCombatPoints.leftHand.modifiers.rangedWeapons = actorRangedWeaponsPoints;
+                itemCombatPoints.rightHand.modifiers.rangedWeapons = actorRangedWeaponsPoints;
+                itemCombatPoints.twoHands.modifiers.rangedWeapons = actorRangedWeaponsPoints;
                 switch (weaponGroup) {
                     // firearms
                     case (fireArmsLabel):
@@ -408,16 +429,19 @@ export default class CustomActor extends Actor {
                                 // left
                                 const actorPistolsLeft = this.getSpecialty(fightingLabel, rangedWeaponsLabel, pistolsLeftLabel);
                                 itemCombatPoints.leftHand.value += (actorPistolsLeft?.value * 2);
-                                modifiers.leftHand.pistolsLeft = (actorPistolsLeft?.value * 2);
+                                // modifiers
+                                itemCombatPoints.leftHand.modifiers.pistolsLeft = (actorPistolsLeft?.value * 2);
                                 // right
                                 const actorPistolsRight = this.getSpecialty(fightingLabel, rangedWeaponsLabel, pistolsRightLabel);
                                 itemCombatPoints.rightHand.value += (actorPistolsRight?.value * 2);
-                                modifiers.rightHand.pistolsRight = (actorPistolsRight?.value * 2);
+                                // modifiers
+                                itemCombatPoints.rightHand.modifiers.pistolsRight = (actorPistolsRight?.value * 2);
                                 break;
                             case 2:
                                 const actorRifles = this.getSpecialty(fightingLabel, rangedWeaponsLabel, riflesLabel);
                                 itemCombatPoints.twoHands.value += (actorRifles?.value * 2);
-                                modifiers.twoHands.rifles = (actorRifles?.value * 2);
+                                // modifiers
+                                itemCombatPoints.twoHands.modifiers.rifles = (actorRifles?.value * 2);
                                 break;
                         }
                         break;
@@ -425,55 +449,53 @@ export default class CustomActor extends Actor {
                     case (rangedWeaponsLabel):
                         const actorBows = this.getSpecialty(fightingLabel, rangedWeaponsLabel, bowsLabel);
                         itemCombatPoints.twoHands.value += (actorBows?.value * 2);
-                        modifiers.twoHands.actorBows = (actorBows?.value * 2);
+                        // modifiers
+                        itemCombatPoints.twoHands.modifiers.bows = (actorBows?.value * 2);
                         break;
                 }
             } else if ((weaponGroup == lightMeleeWeaponsLabel) || (weaponGroup == heavyMeleeWeaponsLabel)) {
                 const actorCloseCombatWeapons = (data.combat.stats.closeCombatWeapons.value || 0);
-                modifiers.leftHand.closeCombatWeapons = actorCloseCombatWeapons;
-                modifiers.rightHand.closeCombatWeapons = actorCloseCombatWeapons;
-                modifiers.twoHands.closeCombatWeapons = actorCloseCombatWeapons;
                 itemCombatPoints.leftHand.value += actorCloseCombatWeapons;
                 itemCombatPoints.rightHand.value += actorCloseCombatWeapons;
                 itemCombatPoints.twoHands.value += actorCloseCombatWeapons;
+                // modifiers
+                itemCombatPoints.leftHand.modifiers.closeCombatWeapons = actorCloseCombatWeapons;
+                itemCombatPoints.rightHand.modifiers.closeCombatWeapons = actorCloseCombatWeapons;
+                itemCombatPoints.twoHands.modifiers.closeCombatWeapons = actorCloseCombatWeapons;
                 // check weapons hands
                 switch (item.system.hands) {
                     case 1:
                         // left
                         const actorOneHandWeaponsLeft = this.getSpecialty(fightingLabel, closeCombatWeaponsLabel, oneHandWeaponsLeftLabel);
                         itemCombatPoints.leftHand.value += (actorOneHandWeaponsLeft?.value * 2);
-                        modifiers.leftHand.oneHandWeaponsLeft = (actorOneHandWeaponsLeft?.value * 2);
+                        // modifiers
+                        itemCombatPoints.leftHand.modifiers.oneHandWeaponsLeft = (actorOneHandWeaponsLeft?.value * 2);
                         // right
                         const actorOneHandWeaponsRight = this.getSpecialty(fightingLabel, closeCombatWeaponsLabel, oneHandWeaponsRightLabel);
                         itemCombatPoints.rightHand.value += (actorOneHandWeaponsRight?.value * 2);
-                        modifiers.rightHand.oneHandWeaponsRight = (actorOneHandWeaponsRight?.value * 2);
+                        // modifiers
+                        itemCombatPoints.rightHand.modifiers.oneHandWeaponsRight = (actorOneHandWeaponsRight?.value * 2);
                         break;
                     case 2:
                         const actorTwoHandsWeapons = this.getSpecialty(fightingLabel, closeCombatWeaponsLabel, twoHandsWeaponsLabel);
                         itemCombatPoints.twoHands.value += (actorTwoHandsWeapons?.value * 2);
-                        modifiers.twoHands.twoHandsWeapons = (actorTwoHandsWeapons?.value * 2);
+                        // modifiers
+                        itemCombatPoints.twoHands.modifiers.twoHandsWeapons = (actorTwoHandsWeapons?.value * 2);
                         break;
                 }
             }
-
+            // compute description from modifiers
             for (const [key1, item1] of Object.entries(itemCombatPoints)) {
-                const itemLabel = game.i18n.localize("freePoints");
-                const itemValue = (actorFreePoints > 0 ? `+${actorFreePoints}` : actorFreePoints);;
-                description = `${itemValue}: ${itemLabel}<br>`
-                for (const [key2, item2] of Object.entries(modifiers)) {
-                    if (key1 == key2) {
-                        for (const [key3, item3] of Object.entries(item2)) {
-                            if (item3 != 0) {
-                                const itemLabel = game.i18n.localize(key3);
-                                const itemValue = (item3 > 0 ? `+${item3}` : item3);;
-                                description += `${itemValue}: ${itemLabel}<br>`
-                            }
-                        }
+                description = "";
+                for (const [key2, item2] of Object.entries(item1.modifiers)) {
+                    if (item2 != 0) {
+                        const itemLabel = game.i18n.localize(key2);
+                        const itemValue = (item2 > 0 ? `+${item2}` : item2);;
+                        description += `${itemValue}: ${itemLabel}<br>`
                     }
+                    itemCombatPoints[key1].description = description;
                 }
-                itemCombatPoints[key1].description = description;
             }
-
             item.system["combatPoints"] = itemCombatPoints;
         }
     }

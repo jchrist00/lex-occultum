@@ -5,14 +5,14 @@ import { ConfigRoll } from "../../dice.js";
 export default class BaseActorSheet extends ActorSheet {
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            // template: "systems/lex-occultum/templates/sheets/actors/characters/character-sheet.hbs",
+            // template: "systems/lex-occultum-dna/templates/sheets/actors/characters/character-sheet.hbs",
             // classes: [
             //     "lexoccultum", "sheet", "character"
             // ],
             width: "auto",
             height: "auto",
-            top: 0,
             resizable: true,
+            top: 0,
             tabs: [
                 {
                     navSelector: ".sheet-tabs",
@@ -318,34 +318,20 @@ export default class BaseActorSheet extends ActorSheet {
                     const rollHandUse = jTag.dataset.rollHandUse;
                     for (const [key, item] of Object.entries(weaponDataData.combatPoints)) {
                         if (key == rollHandUse) {
-                            taskAttributes.push(
-                                {
-                                    type: CONFIG.lexoccultum.rolls.modifierTypes.editable,
-                                    label: key,
-                                    value: item.value,
-                                    paceValue: 1,
-                                    minValue: 0,
-                                    maxValue: item.value
+                            for (const [key, value] of Object.entries(item.modifiers)) {
+                                if (value != 0) {
+                                    taskAttributes.push(
+                                        {
+                                            type: CONFIG.lexoccultum.rolls.modifierTypes.editable,
+                                            label: key,
+                                            value: value,
+                                            paceValue: 1,
+                                            minValue: 0,
+                                            maxValue: value
+                                        }
+                                    );
                                 }
-                            );
-                            // check for non dominant hand
-                            if (weapon.system.hands == 1) {
-                                const weaponUse = weapon.system.handUse;
-                                const actorDominantHand = this.actor.system.registry.dominantHand;
-                                if (!rollHandUse.includes(actorDominantHand)) {
-                                    const actorNonDominantHandPenalty = this.actor.system.combat.stats.nonDominantHand.value;
-                                    if (actorNonDominantHandPenalty < 0) {
-                                        taskAttributes.push(
-                                            {
-                                                type: CONFIG.lexoccultum.rolls.modifierTypes.checkable,
-                                                label: "nonDominantHand",
-                                                value: actorNonDominantHandPenalty,
-                                                activated: true
-                                            }
-                                        );
-                                    }
-                                }
-                            }
+                            };
                         }
                     }
 
@@ -480,8 +466,6 @@ export default class BaseActorSheet extends ActorSheet {
             type: itemType
         };
         this.actor.createEmbeddedDocuments("Item", [data]);
-
-        // return item.sheet.render(true);
     }
     // onItemUpdate
     onItemUpdate(event) {
