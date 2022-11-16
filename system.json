@@ -82,5 +82,5 @@
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "sanity",
   "manifest": "https://raw.githubusercontent.com/jchrist00/lex-occultum/main/system.json",
-  "download": "https://github.com/jchrist00/lex-occultum/archive/refs/tags/release-last.zip"
+  "download": "https://github.com/jchrist00/lex-occultum/archive/refs/tags/release-v1.3.3.zip"
 }
