@@ -73,9 +73,8 @@
     }
   ],
   "compatibility": {
-    "minimum": "10",
-    "verified": "10.288",
-    "maximum": "10.288"
+    "minimum": 10,
+    "verified": 10
   },
   "gridDistance": 1,
   "gridUnits": "m",
