@@ -13,6 +13,7 @@ export default class CustomActor extends Actor {
         this.computeVogue();
         this.computeMoney();
         this.calculateAdventurePointsUsed();
+        this.checkPrototypeTokenActorLink();
     }
 
     // ===================================================================================
@@ -504,14 +505,19 @@ export default class CustomActor extends Actor {
         const data = this.system;
         const fashion = data.registry.vogue.fashion;
         const quality = data.registry.vogue.quality;
-        const vogue = fashion + quality;
-        await this.update({
-            "system.registry.vogue.value": vogue
-        });
+        // let vogue = data.registry.vogue.value;
+        data.registry.vogue.value = (fashion + quality);
+        // if (vogue != (fashion + quality)) {
+        //     vogue = (fashion + quality);
+        //     await this.update({
+        //         "system.registry.vogue.value": vogue
+        //     });
+        // }
     }
     // computeMoney
     async computeMoney() {
         const data = this.system;
+
         if (data.registry.money.marks == 100) {
             const ducats = data.registry.money.ducats + 1;
             await this.update({
@@ -525,6 +531,14 @@ export default class CustomActor extends Actor {
                 "system.registry.money.ducats": ducats,
                 "system.registry.money.marks": 99,
             })
+        }
+    }
+    // checkPrototypeTokenActorLink
+    async checkPrototypeTokenActorLink() {
+        if (this.type == "Character") {
+            if (!this.prototypeToken.actorLink) {
+                await this.update({ "prototypeToken.actorLink": true });
+            }
         }
     }
     // onPropertyEdit

@@ -45,31 +45,38 @@ export default class Helper {
         return;
     }
 
-    // sortByLocalization
+    // sortSkillsByLabelLocalization
     static sortSkillsByLabelLocalization(skillsList) {
-
-        let skillsArray = [];
-        let skillsSortedList = {};
-        for(const skill of Object.values(skillsList))
-        {
+        // application of label localized
+        // skills
+        for (const skill of Object.values(skillsList)) {
             skill.labelLocalized = game.i18n.localize(skill.label);
-            skillsArray.push(skill);
+            //disciplines
+            for (const discipline of Object.values(skill.disciplines)) {
+                discipline.labelLocalized = game.i18n.localize(discipline.label);
+                // specialities
+                for (const speciality of Object.values(discipline.specialities)) {
+                    speciality.labelLocalized = game.i18n.localize(speciality.label);
+                }
+                // sort skill specialities
+                discipline.specialities = Object.fromEntries(
+                    Object.entries(discipline.specialities).sort(([, a], [, b]) => a.labelLocalized.localeCompare(b.labelLocalized))
+                );
+            }
+            // sort skill disciplines
+            skill.disciplines = Object.fromEntries(
+                Object.entries(skill.disciplines).sort(([, a], [, b]) => a.labelLocalized.localeCompare(b.labelLocalized))
+            );
         }
+        // sort skills
+        skillsList = Object.fromEntries(
+            Object.entries(skillsList).sort(([, a], [, b]) => a.labelLocalized.localeCompare(b.labelLocalized))
+        );
 
-        skillsArray.sort((a, b) => {
-            return a.labelLocalized.localeCompare(b.labelLocalized);
-        })
-
-        for(let i = 0; i < skillsArray.length; i++)
-        {
-            let skill = skillsArray[i];
-            skillsSortedList[skill.label] = skill;
-        }
-
-        return skillsSortedList;
+        return skillsList;
     }
 
-    // sortByLocalization
+    // sortItemsByLabelLocalization
     static sortItemsByLabelLocalization(itemsList) {
         itemsList.forEach(function (x) {
             x.system.labelLocalized = game.i18n.localize(x.system.label);
